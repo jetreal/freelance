@@ -3,8 +3,9 @@ import './App.sass';
 import Header from './components/header/Header';
 import LeftSidebar from './components/leftSidebar/LeftSidebar';
 import Center from './components/center/Center';
-import RightSidebar from './components/rightSidebar/RightSidebar';
+// import RightSidebar from './components/rightSidebar/RightSidebar';
 import Footer from './components/Footer/Footer';
+import RightSidebarContainer from './components/rightSidebar/RightSidebarContainer';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
       <div className="mainContentAndSides">
         <LeftSidebar />
         <Center />
-        <RightSidebar />
+        <RightSidebarContainer />
       </div>
       <Footer />
     </div>

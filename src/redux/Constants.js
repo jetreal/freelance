@@ -1,0 +1,1 @@
+export const RIGHT_BUTTON_CLICK = 'RIGHT_BUTTON_CLICK';
