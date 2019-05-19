@@ -8,9 +8,7 @@ import Button from './button/Button';
 
 const RightSidebar = (props) => {
 
-    console.log(props.buttons)
-
-        let btns = props.buttons.map( (b) => {
+        let btns = props.buttons.buttons.map( (b) => {
             return <Button key={b.id}
                            name={b.name} 
                            checked={b.isActiveColor} 

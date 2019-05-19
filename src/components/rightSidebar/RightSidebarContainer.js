@@ -4,7 +4,6 @@ import { button1ClickAC } from '../../redux/Actions';
 
 
 let mapStateToProps = (state) => {
-    console.log(state)
     return {
         buttons: state.ButtonsReducer
     } 

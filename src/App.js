@@ -2,10 +2,9 @@ import React from 'react';
 import './App.sass';
 import Header from './components/header/Header';
 import LeftSidebar from './components/leftSidebar/LeftSidebar';
-import Center from './components/center/Center';
-// import RightSidebar from './components/rightSidebar/RightSidebar';
 import Footer from './components/Footer/Footer';
 import RightSidebarContainer from './components/rightSidebar/RightSidebarContainer';
+import CenterContainer from './components/center/CenterContainer';
 
 function App() {
   return (
@@ -13,7 +12,7 @@ function App() {
       <Header />
       <div className="mainContentAndSides">
         <LeftSidebar />
-        <Center />
+        <CenterContainer />
         <RightSidebarContainer />
       </div>
       <Footer />

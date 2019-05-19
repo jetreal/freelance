@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './header.module.sass'
 
 const Header = (props) => {
+    console.log(props)
     return (
         <div className={styles.header}>
             <div className={styles.topMiddleware}>
