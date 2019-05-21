@@ -1,4 +1,4 @@
-import { RIGHT_BUTTON_CLICK } from "./Constants";
+import { RIGHT_BUTTON_CLICK, CHANGE_LANG, CHANGE_POINTS_PLACE, CHANGE_TV } from "./Constants";
 
 
 let initialState = {
@@ -11,6 +11,7 @@ let initialState = {
     { id: 6, name: 'button 6', isActiveColor: false}
 ],
 activeButtonNum: 1,
+tvIndex: 1,
 texts: [
     { id: 1, textRu: 'text 1', textEn: 'text on english1'},
     { id: 2, textRu: 'text 2', textEn: 'text on english2'},
@@ -22,16 +23,15 @@ texts: [
 isLang: false,
 langBtnNames: [ 'ru', 'en' ],
 phoneNum: '+ 7 952 964 57 21',
-headerText: [ 'создание НЕ шаблонных сайтов', 'Sites and Landing pages creating']
-  
-
+headerText: [ 'создание НЕ шаблонных сайтов', 'Sites and Landing pages creating'],
+pointsPosition: 0 // 0 - 2
 }
 
 const ButtonsReducer = (state = initialState, action) => {
     switch (true) {
         case (action.type === RIGHT_BUTTON_CLICK): {
             if (state.buttons[action.id - 1].isActiveColor) {
-               let copyState = {...state}
+                let copyState = {...state}
                 copyState.activeButtonNum = action.id
                 return copyState
             } else {
@@ -40,11 +40,35 @@ const ButtonsReducer = (state = initialState, action) => {
                     copyState.buttons[i].isActiveColor = false
                 }
                 copyState.buttons[action.id - 1].isActiveColor = true
-                console.log(copyState.activeButtonNum)
                 copyState.activeButtonNum = action.id
                 return copyState
             }
             return {...state}
+        }
+        case (action.type === CHANGE_LANG) : {
+            let copyState = {...state}
+            copyState.isLang = !state.isLang;
+            return copyState
+        }
+        case (action.type === CHANGE_POINTS_PLACE): {
+            let stateCopy = {...state}
+            // stateCopy.pointsPostion = state.pointsPosition
+            stateCopy.pointsPosition++
+            if (stateCopy.pointsPosition > 2) {
+                stateCopy.pointsPosition = 0
+            }
+            console.log(stateCopy.pointsPosition)
+            return stateCopy
+        }
+        case (action.type === CHANGE_TV):{
+            let StateCopy = {...state}
+            StateCopy.tvIndex++
+            if (StateCopy.tvIndex > 4) {
+                StateCopy.tvIndex = 1
+                console.log(StateCopy.tvIndex)
+            }
+            console.log(StateCopy.tvIndex)
+            return StateCopy
         }
         default:
             return {...state}

@@ -1,1 +1,4 @@
 export const RIGHT_BUTTON_CLICK = 'RIGHT_BUTTON_CLICK';
+export const CHANGE_LANG = 'CHANGE_LANG';
+export const CHANGE_POINTS_PLACE = 'CHANGE_POINTS_PLACE';
+export const CHANGE_TV = 'CHANGE_TV';

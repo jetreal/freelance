@@ -3,7 +3,6 @@
     width: 100%
     height: 100px
     clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%)
-    background-color: green
     // background-image: url('../../images/ceiling.jpg')
     background-size: content
     background-position: center
@@ -22,13 +21,11 @@
 .topMiddleware
     display: grid
     grid-template-columns: auto auto auto
-    grid
     justify-content: space-around
     align-content: center
     height: 0px
     overflow: visible
     & p
-        color
         position: relative
         top: 30px
         height: 30px
@@ -40,10 +37,12 @@
     width: 40px
     position: relative
     top: 60px
-    left: 20px
+    left: 70px
     perspective: 80px
 
 .langBtn
+    position: absolute
+    left: -30px
     font-size: 2em
     transform: rotateX(-50deg)
 

@@ -1,6 +1,7 @@
 
 import { connect } from 'react-redux';
 import Center from './Center';
+import { changePointsPlace, changeTV } from '../../redux/Actions';
 
 
 let mapStateToProps = (state) => {
@@ -10,16 +11,18 @@ let mapStateToProps = (state) => {
     } 
 }
 
-let mapDispatchToProps = (dispatch) => {
-    return {
-        // handleClick: (id) => {
-        //     dispatch(button1ClickAC(id))
-        // }
+// let mapDispatchToProps = (dispatch) => {
+//     return {
+//         // handleClick: (id) => {
+//         //     dispatch(button1ClickAC(id))
+//         // }
+//     }
+// }
 
-    }
-}
 
-
-const CenterContainer = connect(mapStateToProps, mapDispatchToProps)(Center)
+const CenterContainer = connect(mapStateToProps, 
+    {changePointsPlace,
+     changeTV
+})(Center)
 
 export default CenterContainer

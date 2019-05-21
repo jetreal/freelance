@@ -7,18 +7,21 @@ const Header = (props) => {
         <div className={styles.header}>
             <div className={styles.topMiddleware}>
                 <div className={styles.langBtnWrapp}>
-                    <button className={styles.langBtn}>
-                        ru
+                    <button className={styles.langBtn}
+                            onClick={props.changeLang}>
+                        {props.isLang === false ? props.langBtnNames[0] : props. langBtnNames[1]}
                     </button>
                 </div>
                 <p>
-                    Sozdanie saitov
+                    {props.isLang === false ? props.headerText[0] : props. headerText[1]}
                 </p>
                 <div>
-                    <p> 8-952-964-57-21</p>
+                    <p>
+                        {props.phoneNum}
+                    </p>
                 </div>
             </div>
-            <img src={require('../../images/ceiling.jpg')}/>
+            <img src={require('../../images/ceiling.jpg')} />
         </div>
     )
 }
