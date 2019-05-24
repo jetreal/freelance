@@ -14,7 +14,8 @@ import { FirstPointDiv,
          ReviewsDiv,
          ReviewsItemDivLeft,
          ReviewsItemDivText,
-         ReviewsItemP} from './StyledComponents';
+         ReviewsItemP,
+         SixSectionDiv} from './StyledComponents';
 import Slider from './Slider/Slider';
 
 
@@ -51,8 +52,11 @@ const Main = (props) => {
 
                 {props.btnIndex === 2 &&
                     <div className={styles.bindPoint}>
+                        <div className={styles.myPhoto}>
+                            <img src={'/images/serjMini.jpg'}/>
+                        </div>
                         <FirstPointDiv pointsPosition={props.pointsPosition}>
-                            <img className={styles.skypeImg} src={'../../../images/skype2.png'} />
+                            <img className={styles.skypeImg} src={'/images/skype2.png'} />
                             {props.pointsPositionWithDelay === 2 &&
 
                                 <ContactTextDiv>
@@ -135,8 +139,15 @@ const Main = (props) => {
                     </FourSectionDiv>
 
                 }
-                <div>
-                </div>
+                {props.btnIndex === 6 && 
+                    <div className={styled.bindPoint}>
+                        <SixSectionDiv>
+                            <div className={styles.logo1}></div>
+                            <div className={styles.logo2}></div>
+                            <div className={styles.logo3}></div>
+                        </SixSectionDiv>
+                    </div>
+                }
 
             </ReactCSSTransitionGroup>
 

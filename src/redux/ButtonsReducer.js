@@ -36,11 +36,11 @@ pointsPosition: 0, // 0 - 2
 pointsPositionWithDelay: 0, // 0 - 2
 slidePosition: 'center',
 sliderContent: [
-	{"text":"1", "url":"/images/soundRight.jpg"},
-	{"text":"2", "url":"/images/soundLeft.jpg"},
-	{"text":"3", "url":"/images/3.jpg"},
-	{"text":"4", "url":"/images/4.jpg"},
-	{"text":"5", "url":"/images/5.jpg"}
+	{"text":"1 Лучший сайт в мире","textEn":"1en", "url":"/images/soundRight.jpg"},
+	{"text":"2 Топовый фрилансер ","textEn":"2en", "url":"/images/soundLeft.jpg"},
+	{"text":"3 Однозначно вы все правы","textEn":"3en", "url":"/images/3.jpg"},
+	{"text":"4 Да это так","textEn":"4en", "url":"/images/4.jpg"},
+	{"text":"5 Всё красиво!","textEn":"5en", "url":"/images/5.jpg"}
 ],
 sliderContentForShow: [
     {"text":"1", "url":"/images/soundRight.jpg"},

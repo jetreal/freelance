@@ -7,12 +7,13 @@ export const WrappSliderDiv = styled.div`
     display: grid
     grid-template-columns: auto auto auto
     justify-content: center
-    overflow: hidden
     border: 1px solid gray
+    overflow: hidden 
     border-radius: 100%
     top: 45px
     left: -130px
     box-shadow: -2px 2px 2px black
+    z-index: 1
 
 
 

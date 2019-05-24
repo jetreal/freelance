@@ -182,18 +182,29 @@ export const ReviewsItemDivText = styled.div`
     top: 45px
     width: 250px
     height: 150px
-    border: 1px solid gray
+    border-top: 1px solid gray
+    border-bottom: 1px solid gray
     display: grid
     align-content: center
     justify-content: center
     text-align: justify
-    background-color: rgba(10, 10, 10, .2)
-    box-shadow: 2px 2px 2px black, -2px -2px 2px black
+    box-shadow: 2px 2px 2px black
+    background-color: rgba(1, 1, 10, 0.5);
+    clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)
 `
 
 export const ReviewsItemP = styled.p`
     transition: ${props => props.slidePosition !== 'center' ? 'opacity .7s' : 'opacity 0s'} 
     opacity: ${props => props.slidePosition === 'center' ? '1' : '0'}
     position: relative
+
+`
+
+export const SixSectionDiv = styled.div`
+    width: 100%
+    display: grid
+    // grid-template-columns: auto auto auto
+    border: 1px solid green
+    grid-gap: 20px
 
 `

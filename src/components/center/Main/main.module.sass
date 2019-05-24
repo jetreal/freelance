@@ -19,17 +19,39 @@
 
 
 .buttonLeft
-    height: 45px
+    height: 40px
+    width: 40px
     position: absolute
-    left: -138px
-    width: 10px
-    background-color: gray
+    left: -200px
+    top: 20px
+    // background-color: gray
+    outline: none
+    border-radius: 100%
+    background-color: rgba(1,1,1,.1)
+    border: 1px solid gray
+    cursor: pointer
+    box-shadow: 2px 2px 3px black inset
+    z-index: 0
+    &:hover
+        transform: scale(1.1,1.1)
+        top: 18px
 .buttonRight
-    height: 45px
-    width: 10px
+    height: 40px
+    width: 40px
     position: absolute
-    left: 100px
-    background-color: gray
+    left: -100px
+    top: 20px
+    // background-color: gray
+    outline: none
+    border-radius: 100%
+    background-color: rgba(1,1,1,.1)
+    border: 1px solid gray
+    cursor: pointer
+    box-shadow: 2px 2px 3px black inset
+    z-index: 0
+    &:hover
+        transform: scale(1.1,1.1)
+        top: 18px
 
 
 .centerPoint
@@ -62,3 +84,40 @@
     & p
         margin: initial
         padding: initial
+
+
+.myPhoto
+    position: absolute
+    top: 45px
+    left: -205px
+    z-index: 2
+.myPhoto img
+    // width: 100%
+    // heght: 100%
+    width: 150px
+    height: 150px
+    border-radius: 100%
+    border: 1px solid gray
+    box-shadow: -2px 2px 2px black
+
+.logo1
+    height: 100px
+    width: 180px
+    // border: 1px solid gray
+    background-image: url('/images/p1.png')
+    background-position: center
+    background-repeat: no-repeat
+.logo2
+    height: 100px
+    width: 150px
+    // border: 1px solid gray
+    background-image: url('/images/p2.png')
+    background-position: center
+    background-repeat: no-repeat
+.logo3
+    height: 100px
+    width: 150px
+    // border: 1px solid gray
+    background-image: url('/images/p3.png')
+    background-position: center
+    background-repeat: no-repeat
