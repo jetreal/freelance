@@ -14,15 +14,24 @@ const Center = (props) => {
         <div className={x !== 1 ? styles.center : styles.center2}
             style={{ backgroundImage: `url(/images/${x}.jpg)` }} >
             
-         <div className={styles.topMidlware}>
+         {/* <div className={styles.topMidlware}>
 
-         </div>
+         </div> */}
          <Main btnIndex ={props.buttons.activeButtonNum}
                tvIndex={props.buttons.tvIndex}
                texts={props.buttons.texts} 
                isLang={props.buttons.isLang}
                pointsPosition={props.buttons.pointsPosition}
+               pointsPositionWithDelay={props.buttons.pointsPositionWithDelay}
                changePointsPlace={props.changePointsPlace}
+               changePointsPlaceDelay={props.changePointsPlaceDelay}
+               leftSlide={props.leftSlide}
+               rightSlide={props.rightSlide}
+               slidePosition={props.buttons.slidePosition}
+               sliderBgImg={props.buttons.sliderBgImg}
+               sliderText={props.buttons.sliderText}
+               sliderContentForShow={props.buttons.sliderContentForShow}
+               
                />
                
          <Atributes changeTV={props.changeTV}

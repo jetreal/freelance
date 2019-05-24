@@ -1,9 +1,12 @@
 .attributes
-    height: 1%
+    margin: 0 auto
+    height: 0px
     display: grid
     grid-template-columns: auto auto auto
     justify-content: center
     overflow: visible
+    position: relative
+    top: 15px
 .miniTable
     width: 130px
     position: relative
@@ -46,13 +49,33 @@
     max-width: 400px
     position: relative
     top: -30px
-.cupboard
+.soundRight
     width: 100px
-.cupboard img
     position: relative
-    top: -260px
-    left: 130px
+.soundRightImg
+    z-index: 0
+    position: relative
+    width: 40px
+    top: -83px
+    left: -18px
+    // box-shadow: 1px 0px 2px gray, -1px 2px 2px gray
+    border-radius: 3px
+
+.soundLeft
+    width: 0px
+    position: absolute
+.soundLeftImg
+    z-index: 0
+    position: absolute
+    width: 40px
+    top: -83px
+    left: 82px
+    // box-shadow: 1px 0px 2px gray, -1px 2px 2px gray
+    border-radius: 3px
+    
 .tableSection
+    position: relative
+    width: 100px
     display: grid
     grid-template-columns: auto auto
 .wrappTvRemote

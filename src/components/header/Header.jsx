@@ -1,5 +1,7 @@
 import React from 'react'
 import styles from './header.module.sass'
+import { PhoneNumDiv } from './StyledComponentHeader';
+
 
 const Header = (props) => {
     console.log(props)
@@ -15,11 +17,14 @@ const Header = (props) => {
                 <p>
                     {props.isLang === false ? props.headerText[0] : props. headerText[1]}
                 </p>
-                <div>
-                    <p>
-                        {props.phoneNum}
-                    </p>
-                </div>
+            
+                    <PhoneNumDiv>
+                        <p>
+                            {props.phoneNum}
+                        </p>
+
+                    </PhoneNumDiv>
+              
             </div>
             <img src={require('../../images/ceiling.jpg')} />
         </div>

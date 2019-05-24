@@ -1,7 +1,11 @@
 
 import { connect } from 'react-redux';
 import Center from './Center';
-import { changePointsPlace, changeTV } from '../../redux/Actions';
+import { changePointsPlace,
+         changeTV,
+         changePointsPlaceDelay,
+         leftSlide,
+         rightSlide } from '../../redux/Actions';
 
 
 let mapStateToProps = (state) => {
@@ -22,7 +26,10 @@ let mapStateToProps = (state) => {
 
 const CenterContainer = connect(mapStateToProps, 
     {changePointsPlace,
-     changeTV
+     changeTV,
+     changePointsPlaceDelay,
+     leftSlide,
+     rightSlide
 })(Center)
 
 export default CenterContainer
