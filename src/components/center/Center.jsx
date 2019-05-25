@@ -31,6 +31,7 @@ const Center = (props) => {
                sliderBgImg={props.buttons.sliderBgImg}
                sliderText={props.buttons.sliderText}
                sliderContentForShow={props.buttons.sliderContentForShow}
+               reactText={props.buttons.reactText}
                
                />
                

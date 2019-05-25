@@ -15,7 +15,8 @@ import { FirstPointDiv,
          ReviewsItemDivLeft,
          ReviewsItemDivText,
          ReviewsItemP,
-         SixSectionDiv} from './StyledComponents';
+         SixSectionDiv,
+         Overlap} from './StyledComponents';
 import Slider from './Slider/Slider';
 
 
@@ -98,7 +99,7 @@ const Main = (props) => {
                         </ThirdPointDiv>
                         <div className={styles.centerPoint}
                             onClick={props.pointsPositionWithDelay === props.pointsPosition ? props.changePointsPlace : null}>
-                            <img className={styles.hour24} src={'../../../images/hours.png'} />
+                            <img className={styles.hour24} src={'/images/hours.png'} />
                         </div>
                     </div>
                 }
@@ -141,10 +142,17 @@ const Main = (props) => {
                 }
                 {props.btnIndex === 6 && 
                     <div className={styled.bindPoint}>
+                            
                         <SixSectionDiv>
                             <div className={styles.logo1}></div>
-                            <div className={styles.logo2}></div>
+                            <div className={styles.logo4}>
+                                <div className={styles.reactCenterLine}></div>
+                                <p>ReactJS</p>
+                            </div>
                             <div className={styles.logo3}></div>
+                            <Overlap reactText={props.reactText}>
+
+                            </Overlap>
                         </SixSectionDiv>
                     </div>
                 }

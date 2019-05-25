@@ -6,7 +6,8 @@ import { RIGHT_BUTTON_CLICK,
          LEFT_SLIDE,
         RIGHT_SLIDE, 
         INITIAL_SLIDE_LEFT,
-        INITIAL_SLIDE_RIGHT} from "./Constants";
+        INITIAL_SLIDE_RIGHT,
+        REMOVE_OVERLAP_ON_REACT_TEXT} from "./Constants";
 
 
 let initialState = {
@@ -49,13 +50,14 @@ sliderContentForShow: [
 ],
 
 sliderBgImg: "/images/soundLeft.jpg",
-sliderText: 'text1'
+sliderText: 'text1',
+reactText: false
 }
 
 const ButtonsReducer = (state = initialState, action) => {
     switch (true) {
         case (action.type === RIGHT_BUTTON_CLICK): {
-            if (state.buttons[action.id - 1].isActiveColor) {
+            if (state.buttons[action.id - 1].isActiveColor === true) {
                 let copyState = {...state}
                 copyState.activeButtonNum = action.id
                 return copyState
@@ -134,7 +136,17 @@ const ButtonsReducer = (state = initialState, action) => {
             StateCopy.sliderText = StateCopy.sliderContentForShow[1].text
             return StateCopy
         }
+        case (action.type === REMOVE_OVERLAP_ON_REACT_TEXT) : {
+            let StateCopy = {...state}
+            if (StateCopy.activeButtonNum === 6 ) {
+                StateCopy.reactText = true
+            } else {
+                StateCopy.reactText = false
+            }
 
+
+            return StateCopy
+        }
         default:
             return {...state}
     }

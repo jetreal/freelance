@@ -203,8 +203,25 @@ export const ReviewsItemP = styled.p`
 export const SixSectionDiv = styled.div`
     width: 100%
     display: grid
-    // grid-template-columns: auto auto auto
-    border: 1px solid green
-    grid-gap: 20px
+    grid-template-columns: auto 480px auto
+    position: relative
+    // justify-content: center
+    align-content: center
+    // border: 1px solid green
+
+
+`
+
+export const Overlap = styled.div`
+    width: ${props => props.reactText === true ? '0': '100%'};
+    transition: width 1s
+    height: 120px
+    position: absolute
+    right: 0px
+    top: -10px
+    background-color: #030303
+    // transform: translateX(200px);
+    z-index: 0
+    // border: 1px solid green
 
 `

@@ -2,6 +2,7 @@
     height: 100%
     margin: initial
     padding: initial
+    z-index: 2
 
     & p
         text-align: center
@@ -82,6 +83,7 @@
     width: 100%
     height: 50px
     & p
+        z-index: 1
         margin: initial
         padding: initial
 
@@ -101,10 +103,13 @@
     box-shadow: -2px 2px 2px black
 
 .logo1
-    height: 100px
-    width: 180px
+    position: relative
+    top: 50px
+    height: 1px
+    width: 100%
+    background-color: #fff
     // border: 1px solid gray
-    background-image: url('/images/p1.png')
+    // background-image: url('/images/p1.png')
     background-position: center
     background-repeat: no-repeat
 .logo2
@@ -115,9 +120,40 @@
     background-position: center
     background-repeat: no-repeat
 .logo3
-    height: 100px
-    width: 150px
+    position: relative
+    top: 50px
+    height: 1px
+    width: 100%
+    background-color: #fff
     // border: 1px solid gray
-    background-image: url('/images/p3.png')
+    // background-image: url('/images/p3.png')
     background-position: center
     background-repeat: no-repeat
+
+.logo4
+    height: 100px
+    width: 480px
+    display: grid
+    align-content: center
+    position: relative
+    // justify-content: center
+    // border: 1px solid gray
+    // background-image: url('/images/p4.png')
+    background-position: center
+    background-repeat: no-repeat
+    & p
+        position: relative
+        top: -12px
+        font-size: 9em
+        padding: initial
+        margin: initial
+        z-index: 0
+        color: white
+        transform: rotateX
+.reactCenterLine
+    top: 105px
+    width: 100%
+    height: 1px
+    position: absolute
+    background-color: #fff
+

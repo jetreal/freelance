@@ -16,10 +16,11 @@ export function* watchIncrementAsync() {
   yield takeEvery('CHANGE_POINTS_PLACE', helloSaga)
   yield takeEvery('LEFT_SLIDE', initialSlideLeftSaga)
   yield takeEvery('RIGHT_SLIDE', initialSlideRightSaga)
+  yield takeEvery('RIGHT_BUTTON_CLICK', showReactText)
 }
 
 export function* helloSaga() {
-    yield delay(1100)
+    yield delay(1050)
     yield put({type: 'CHANGE_POINTS_PLACE_WITH_DELAY'})
   }
 
@@ -31,6 +32,10 @@ export function* initialSlideRightSaga() {
   yield delay(1000)
   yield put({ type: 'INITIAL_SLIDE_RIGHT' })
 }
+export function* showReactText() {
+  yield delay(500)
+  yield put({ type: 'REMOVE_OVERLAP_ON_REACT_TEXT' })
+}
 
 export default function* rootSaga() {
     yield all([
@@ -38,5 +43,6 @@ export default function* rootSaga() {
       watchIncrementAsync(),
       initialSlideLeftSaga(),
       initialSlideRightSaga(),
+      showReactText()
     ])
   }

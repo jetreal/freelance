@@ -11,7 +11,7 @@ const Header = (props) => {
                 <div className={styles.langBtnWrapp}>
                     <button className={styles.langBtn}
                             onClick={props.changeLang}>
-                        {props.isLang === false ? props.langBtnNames[0] : props. langBtnNames[1]}
+                        {props.isLang === false ? props.langBtnNames[0] : props.langBtnNames[1]}
                     </button>
                 </div>
                 <p>
@@ -26,7 +26,7 @@ const Header = (props) => {
                     </PhoneNumDiv>
               
             </div>
-            <img src={require('../../images/ceiling.jpg')} />
+            <img src={'/images/ceiling.jpg'} />
         </div>
     )
 }
