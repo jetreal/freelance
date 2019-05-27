@@ -7,8 +7,8 @@ import { WrappSliderDiv, ImgDiv, BgSliderDiv} from './SliderStyled';
 const Slider = (props) => {
 
 
-    let Images = props.sliderContentForShow.map( item => {
-            return  <ImgDiv slidePosition={props.slidePosition}>
+    let Images = props.sliderContentForShow.map( (item, index) => {
+            return  <ImgDiv slidePosition={props.slidePosition} >
                         <img src={item.url}/>
                     </ImgDiv>
     })

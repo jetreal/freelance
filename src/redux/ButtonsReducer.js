@@ -7,7 +7,8 @@ import { RIGHT_BUTTON_CLICK,
         RIGHT_SLIDE, 
         INITIAL_SLIDE_LEFT,
         INITIAL_SLIDE_RIGHT,
-        REMOVE_OVERLAP_ON_REACT_TEXT} from "./Constants";
+        REMOVE_OVERLAP_ON_REACT_TEXT,
+        UNBLOCK_SLIDER} from "./Constants";
 
 
 let initialState = {
@@ -51,17 +52,19 @@ sliderContentForShow: [
 
 sliderBgImg: "/images/soundLeft.jpg",
 sliderText: 'text1',
-reactText: false
+reactText: false,
+isBlockedSlider: false
 }
 
 const ButtonsReducer = (state = initialState, action) => {
     switch (true) {
         case (action.type === RIGHT_BUTTON_CLICK): {
-            if (state.buttons[action.id - 1].isActiveColor === true) {
-                let copyState = {...state}
-                copyState.activeButtonNum = action.id
-                return copyState
-            } else {
+            if (state.buttons[action.id - 1].isActiveColor === true ) {
+
+                return state
+            } 
+            if (state.buttons[action.id - 1].isActiveColor !== true ) 
+            {
                 let copyState = {...state}
                 for (let i = 0; i < copyState.buttons.length; i++) {
                     copyState.buttons[i].isActiveColor = false
@@ -98,54 +101,60 @@ const ButtonsReducer = (state = initialState, action) => {
             StateCopy.tvIndex++
             if (StateCopy.tvIndex > 4) {
                 StateCopy.tvIndex = 1
-                console.log(StateCopy.tvIndex)
             }
-            console.log(StateCopy.tvIndex)
             return StateCopy
         }
         case (action.type === LEFT_SLIDE) : {
             let StateCopy = {...state}
             StateCopy.slidePosition = 'left'
             StateCopy.sliderBgImg = StateCopy.sliderContentForShow[2].url
-            
+            StateCopy.isBlockedSlider = true;
             return StateCopy
         }
         case (action.type === RIGHT_SLIDE) : {
             let StateCopy = {...state}
             StateCopy.slidePosition = 'right'
             StateCopy.sliderBgImg = StateCopy.sliderContentForShow[0].url
-
+            StateCopy.isBlockedSlider = true;
             return StateCopy
         }
         case (action.type === INITIAL_SLIDE_LEFT) : {     
             let StateCopy = {...state}
-            StateCopy.slidePosition = 'center'
             StateCopy.sliderContent = [...state.sliderContent]
             let x = StateCopy.sliderContent.shift()
             StateCopy.sliderContent.push(x)
             StateCopy.sliderContentForShow = StateCopy.sliderContent.slice(0, 3)
             StateCopy.sliderText = StateCopy.sliderContentForShow[1].text
+            StateCopy.slidePosition = 'center'
+            
             return StateCopy
         }
         case (action.type === INITIAL_SLIDE_RIGHT) : {     
             let StateCopy = {...state}
-            StateCopy.slidePosition = 'center'
             let x = StateCopy.sliderContent.pop()
             StateCopy.sliderContent = [x, ...StateCopy.sliderContent]
             StateCopy.sliderContentForShow = StateCopy.sliderContent.slice(0, 3)
             StateCopy.sliderText = StateCopy.sliderContentForShow[1].text
+            StateCopy.slidePosition = 'center'
+            
+            return StateCopy
+        }
+        case (action.type === UNBLOCK_SLIDER) : {     
+            let StateCopy = {...state}
+            StateCopy.isBlockedSlider = false;
             return StateCopy
         }
         case (action.type === REMOVE_OVERLAP_ON_REACT_TEXT) : {
             let StateCopy = {...state}
             if (StateCopy.activeButtonNum === 6 ) {
                 StateCopy.reactText = true
+                return StateCopy
             } else {
                 StateCopy.reactText = false
+                return state
             }
 
 
-            return StateCopy
         }
         default:
             return {...state}

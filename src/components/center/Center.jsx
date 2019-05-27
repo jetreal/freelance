@@ -8,7 +8,6 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
 const Center = (props) => {
-    console.log(props)
     let x = props.buttons.activeButtonNum
     return (
         <div className={x !== 1 ? styles.center : styles.center2}
@@ -32,6 +31,7 @@ const Center = (props) => {
                sliderText={props.buttons.sliderText}
                sliderContentForShow={props.buttons.sliderContentForShow}
                reactText={props.buttons.reactText}
+               isBlockedSlider={props.buttons.isBlockedSlider}
                
                />
                

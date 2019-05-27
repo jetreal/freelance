@@ -1,0 +1,56 @@
+.bindPoint
+    width: 0px
+    height: 0px
+    overflow: visible
+    outline: 2px solid red
+    display: block
+    margin: 0 auto
+    position: relative
+    top: -50px
+
+.myPhoto
+    position: absolute
+    top: 45px
+    left: -205px
+    z-index: 2
+
+.myPhoto img
+    // width: 100%
+    // heght: 100%
+    width: 150px
+    height: 150px
+    border-radius: 100%
+    border: 1px solid gray
+    box-shadow: -2px 2px 2px black
+
+.centerPoint
+    display: grid
+    align-content: center
+    justify-content: center
+    border: 2px solid magenta
+    width: 20px
+    height: 20px
+    position: absolute
+    top: 165px
+    border-radius: 100%
+    cursor: pointer
+    // transform: scale(1.4,1.4)
+
+.mailImg:hover
+    transition: transform .2s 
+    transform: rotateZ(360deg)
+.skypeImg:hover
+    transition: transform .2s 
+    transform: rotateZ(360deg)
+.phoneImg:hover
+    transition: transform .2s
+    transform: rotateZ(360deg)
+
+.hour24:hover
+    transition: transform .2s
+    transform: rotateZ(360deg)
+    cursor: pointer
+
+.hour24:active
+    transform: scale(.9,.9)
+    border-radius: 100%

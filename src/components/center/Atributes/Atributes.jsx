@@ -4,7 +4,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
 const Atributes = (props) => {
-    console.log(props)
+
     return (
         <div className={styles.attributes}>
             <div className={styles.tableSection}>

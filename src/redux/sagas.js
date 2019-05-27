@@ -17,13 +17,17 @@ export function* watchIncrementAsync() {
   yield takeEvery('LEFT_SLIDE', initialSlideLeftSaga)
   yield takeEvery('RIGHT_SLIDE', initialSlideRightSaga)
   yield takeEvery('RIGHT_BUTTON_CLICK', showReactText)
+  yield takeEvery(['INITIAL_SLIDE_LEFT', 'INITIAL_SLIDE_RIGHT' ], unblockSlider)
 }
 
 export function* helloSaga() {
     yield delay(1050)
     yield put({type: 'CHANGE_POINTS_PLACE_WITH_DELAY'})
   }
-
+  export function* unblockSlider() {
+    yield delay(250)
+    yield put({ type: 'UNBLOCK_SLIDER' })
+  }
 export function* initialSlideLeftSaga() {
   yield delay(1000)
   yield put({ type: 'INITIAL_SLIDE_LEFT' })
