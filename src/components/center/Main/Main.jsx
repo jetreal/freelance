@@ -13,6 +13,19 @@ import { BrowserRouter, Route } from 'react-router-dom';
 const Main = (props) => {
 
     switch (props.btnIndex) {
+        case 1: {
+            return (
+                <div className={styles.main}>
+                
+                    <HeaderText isLang={props.isLang}
+                        texts={props.texts}
+                        btnIndex={props.btnIndex} />
+
+                    {/* <Section1 /> */}
+
+                </div>
+            )
+        }
         case 2: {
             return (
                 <div className={styles.main}>
@@ -58,6 +71,11 @@ const Main = (props) => {
                 </div>
             )
         }
+        // case 5: {
+        //     return (
+                
+        //     )
+        // }
         case 6: {
             return (
 
@@ -79,34 +97,6 @@ const Main = (props) => {
                 texts={props.texts}
                 btnIndex={props.btnIndex} />
 
-
-            {/* <Route path='/2'
-                    render={ () => <Section2 pointsPosition = {props.pointsPosition}
-                                             pointsPositionWithDelay = {props.pointsPositionWithDelay}
-                                             changePointsPlace = {props.changePointsPlace}/>}/> */}
-
-            {/* {props.btnIndex === 2 &&
-                    <Section2 pointsPosition = {props.pointsPosition}
-                                pointsPositionWithDelay = {props.pointsPositionWithDelay}
-                                changePointsPlace = {props.changePointsPlace}/>
-                }
-
-                { props.btnIndex === 3 && 
-                     <Section3 slidePosition={props.slidePosition}
-                                sliderBgImg={props.sliderBgImg}
-                                sliderContentForShow={props.sliderContentForShow}
-                                leftSlide = {props.leftSlide}
-                                rightSlide = {props.rightSlide}
-                                sliderText = {props.sliderText}
-                     />   
-                } */}
-            {/* {props.btnIndex === 4 &&
-                    <Section4 />
-                } */}
-            {/* {props.btnIndex === 6 && 
-                    <Section6 reactText={props.reactText}/>
-                } */}
-            {/* </ReactCSSTransitionGroup> */}
 
         </div>
     )

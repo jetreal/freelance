@@ -1,42 +1,36 @@
 import React from 'react'
 import styles from './atributes.module.sass'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import SoundRight from './SoundRight/SoundRight';
+import WrappTv from './TV/WrappTv';
+import Tv from './TV/Tv';
+import Sofa from './Sofa/Sofa';
+import TableSection from './TableSection/TableSection';
+import SoundLeft from './TableSection/SoundLeft/SoundLeft';
+import Table from './TableSection/Table/Table';
+import TvRemote from './TableSection/TvRemote/TvRemote';
+import SofaImage from './Sofa/SofaImage/SofaImage';
 
 
 const Atributes = (props) => {
 
     return (
         <div className={styles.attributes}>
-            <div className={styles.tableSection}>
-                <div className={styles.soundLeft}>
-                    <img className={styles.soundLeftImg} src={'../../../images/soundRight.jpg'} />
-                </div>
-                <img className={styles.miniTable} src={require('../../../images/table.png')} />
-                <div className={styles.wrappTvRemote} >
-                    <img onClick={props.changeTV}
-                        className={styles.tvRemote} src={'/images/tvRemote.png'} />
-                </div>
-            </div>
-            <div className={styles.sofa}>
-                <div className={styles.wrappTV}>
 
-                    <div className={styles.tv}>
-                        {/* <img className={styles.tvImg} src={`/images/${props.tvIndex + 1}.jpg`} /> */}
-                            <video className={styles.tvImg} 
-                                    src={`/video/${props.tvIndex}.mp4`} 
-                                    autoPlay
-                                  
-                            ></video>
-                    </div>
+            <TableSection>
+                <SoundLeft />
+                <Table />
+                <TvRemote changeTV={props.changeTV} />
+            </TableSection>
 
-                </div>
+            <Sofa>
+                <WrappTv>
+                    <Tv tvIndex={props.tvIndex} />
+                </WrappTv>
+                <SofaImage />
+            </Sofa>
 
-                <img className={styles.sofaImg} src={require('../../../images/sofa.png')} />
+            <SoundRight />
 
-            </div>
-            <div className={styles.soundRight}>
-                <img className={styles.soundRightImg} src={'../../../images/soundLeft.jpg'} />
-            </div>
         </div>
     )
 }
