@@ -1,12 +1,12 @@
 import React from 'react'
-import { PhoneNumDiv } from '../StyledComponentHeader';
+import { PhoneNumDiv, PhoneNumberP } from '../StyledComponentHeader';
 
 const PhoneNumber = (props) => {
     return (
         <PhoneNumDiv>
-            <p>
+            <PhoneNumberP>
                 {props.phoneNum}
-            </p>
+            </PhoneNumberP>
         </PhoneNumDiv>
     )
 }

@@ -32,6 +32,15 @@ const Center = (props) => {
                sliderContentForShow={props.buttons.sliderContentForShow}
                reactText={props.buttons.reactText}
                isBlockedSlider={props.buttons.isBlockedSlider}
+               showSection1Text={props.showSection1Text}
+               showSection4Text={props.showSection4Text}
+               isShowedSection1Text={props.buttons.isShowedSection1Text}
+               isShowedSection4Text={props.buttons.isShowedSection4Text}
+               section5Texts={props.buttons.section5Texts}
+               isSection5TextsShowed={props.buttons.isSection5TextsShowed}
+               section5TextsIndex={props.buttons.section5TextsIndex}
+               showSection5Text={props.showSection5Text}
+               changeSection5Text={props.changeSection5Text}
                
                />
                

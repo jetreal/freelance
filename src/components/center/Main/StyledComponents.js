@@ -105,6 +105,8 @@ export const ThirdPointDiv = styled.div`
 `
 
 export const FourSectionDiv = styled.div`
+    
+    text-align: justify;
     display: grid;
     grid-template-columns: auto auto auto;
     color: white;
@@ -125,6 +127,10 @@ export const FourSectionDiv = styled.div`
 `
 
 export const FourSectionInnerDiv = styled.div`
+    opacity: ${props => props.isShowedSection4Text === true ? '1' : '0'};
+    transform: ${props => props.isShowedSection4Text === true ? 'rotateY(0deg)' : 'rotateY(90deg)'};
+    transition: transform .5s;
+    text-align: center;
     display: grid;
     align-content: center;
     padding: 0 20px;
@@ -133,10 +139,13 @@ export const FourSectionInnerDiv = styled.div`
         width: 180px;
     }
     @media (max-width: 1080px) { 
-        width: 260px;
+        width: 300px;
     }
-    @media (max-width: 1000px) { 
+    @media (max-width: 1000px) {
+        width: 250px;
         padding: 0 2px;
+        padding: initial;
+        pargin: initial;
     }
 
 `

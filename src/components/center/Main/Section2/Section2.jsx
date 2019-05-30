@@ -24,7 +24,7 @@ const Section2 = (props) => {
                             }
                         </FirstPointDiv>
                         <SecondPointDiv pointsPosition={props.pointsPosition}>
-                            <img className={styles.mailImg} src={'../../../images/mail2.png'} />
+                            <img className={styles.mailImg} src={'/images/mail2.png'} />
                             {props.pointsPositionWithDelay === 0 &&
                                 <ContactTextDiv >
                                     <Wave 
@@ -38,7 +38,7 @@ const Section2 = (props) => {
                             }
                         </SecondPointDiv>
                         <ThirdPointDiv pointsPosition={props.pointsPosition}>
-                            <img className={styles.phoneImg} src={'../../../images/phone2.png'} />
+                            <img className={styles.phoneImg} src={'/images/phone2.png'} />
                             {props.pointsPositionWithDelay === 1 &&
                                 <ContactTextDiv>
                                     <Random 

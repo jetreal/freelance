@@ -18,6 +18,11 @@ export function* watchIncrementAsync() {
   yield takeEvery('RIGHT_SLIDE', initialSlideRightSaga)
   yield takeEvery('RIGHT_BUTTON_CLICK', showReactText)
   yield takeEvery(['INITIAL_SLIDE_LEFT', 'INITIAL_SLIDE_RIGHT' ], unblockSlider)
+  // yield takeEvery('SHOW_SECTION5_TEXT', showSection5Text)
+}
+
+export function* watchChangeSection5Text() {
+  yield takeEvery('SHOW_SECTION5_TEXT', showSection5Text)
 }
 
 export function* helloSaga() {
@@ -40,13 +45,18 @@ export function* showReactText() {
   yield delay(500)
   yield put({ type: 'REMOVE_OVERLAP_ON_REACT_TEXT' })
 }
-
+export function* showSection5Text() {
+  yield delay(1500)
+  yield put({ type: 'CHANGE_SECTION5_TEXT' })
+}
 export default function* rootSaga() {
     yield all([
-      helloSaga(),
+      helloSaga,
       watchIncrementAsync(),
-      initialSlideLeftSaga(),
-      initialSlideRightSaga(),
-      showReactText()
+      initialSlideLeftSaga,
+      initialSlideRightSaga,
+      showReactText,
+      watchChangeSection5Text(),
+      showSection5Text
     ])
   }

@@ -7,23 +7,27 @@ import Section2 from './Section2/Section2';
 import Section3 from './Section3/Section3';
 import Section4 from './Section4/Section4';
 import Section6 from './Section6/Section6';
-
 import { BrowserRouter, Route } from 'react-router-dom';
+import Section1 from './Section1/Section1';
+import Section5 from './Section5/Section5';
 
 const Main = (props) => {
-
+    
     switch (props.btnIndex) {
         case 1: {
             return (
-                <div className={styles.main}>
                 
+                <div className={styles.main}>
+                    
                     <HeaderText isLang={props.isLang}
                         texts={props.texts}
                         btnIndex={props.btnIndex} />
-
-                    {/* <Section1 /> */}
+                        
+                    <Section1 showSection1Text={props.showSection1Text}
+                              isShowedSection1Text={props.isShowedSection1Text}/>
 
                 </div>
+              
             )
         }
         case 2: {
@@ -67,15 +71,26 @@ const Main = (props) => {
                     <HeaderText isLang={props.isLang}
                         texts={props.texts}
                         btnIndex={props.btnIndex} />
-                    <Section4 />
+                    <Section4 isShowedSection4Text={props.isShowedSection4Text}
+                            showSection4Text={props.showSection4Text} />
                 </div>
             )
         }
-        // case 5: {
-        //     return (
-                
-        //     )
-        // }
+        case 5: {
+            return (
+                <div className={styles.main}>
+                    <HeaderText isLang={props.isLang}
+                        texts={props.texts}
+                        btnIndex={props.btnIndex} />
+                    <Section5 section5Texts={props.section5Texts}
+                              isSection5TextsShowed={props.isSection5TextsShowed}
+                              section5TextsIndex={props.section5TextsIndex}
+                              showSection5Text={props.showSection5Text}
+                              changeSection5Text={props.changeSection5Text}/>
+                    
+                </div>
+            )
+        }
         case 6: {
             return (
 
@@ -100,5 +115,6 @@ const Main = (props) => {
 
         </div>
     )
+    
 }
 export default Main

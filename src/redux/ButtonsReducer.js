@@ -8,7 +8,12 @@ import { RIGHT_BUTTON_CLICK,
         INITIAL_SLIDE_LEFT,
         INITIAL_SLIDE_RIGHT,
         REMOVE_OVERLAP_ON_REACT_TEXT,
-        UNBLOCK_SLIDER} from "./Constants";
+        UNBLOCK_SLIDER,
+        SHOW_SECTION1_TEXT,
+        SHOW_SECTION4_TEXT,
+        SHOW_SECTION5_TEXT,
+        CHANGE_SECTION5_TEXT
+    } from "./Constants";
 
 
 let initialState = {
@@ -33,7 +38,7 @@ texts: [
 isLang: false,
 langBtnNames: [ 'ru', 'en' ],
 phoneNum: '+ 7 952 964 57 21',
-headerText: [ 'создание НЕ шаблонных сайтов', 'Sites and Landing pages creating'],
+headerText: [ 'Создание Cайтов', 'The Sites Creating'],
 pointsPosition: 0, // 0 - 2
 pointsPositionWithDelay: 0, // 0 - 2
 slidePosition: 'center',
@@ -53,12 +58,23 @@ sliderContentForShow: [
 sliderBgImg: "/images/soundLeft.jpg",
 sliderText: 'text1',
 reactText: false,
-isBlockedSlider: false
+isBlockedSlider: false,
+isShowedSection1Text: false,
+isShowedSection4Text: false,
+section5Texts: [
+    {id: 1, textRu: 'русский текст 1 ggggggggggggggghg  hg gh hgg', textEn: 'englighh text 1'},
+    {id: 2, textRu: 'русский текст 2', textEn: 'englighh text 2'},
+    {id: 3, textRu: 'русский текст 3', textEn: 'englighh text 3'},
+    {id: 4, textRu: 'русский текст 4', textEn: 'englighh text 4'}
+],
+isSection5TextsShowed: true,
+section5TextsIndex: 0
 }
 
 const ButtonsReducer = (state = initialState, action) => {
     switch (true) {
         case (action.type === RIGHT_BUTTON_CLICK): {
+
             if (state.buttons[action.id - 1].isActiveColor === true ) {
 
                 return state
@@ -95,7 +111,6 @@ const ButtonsReducer = (state = initialState, action) => {
             stateCopy.pointsPositionWithDelay = stateCopy.pointsPosition
             return stateCopy
         }
-
         case (action.type === CHANGE_TV):{
             let StateCopy = {...state}
             StateCopy.tvIndex++
@@ -126,7 +141,6 @@ const ButtonsReducer = (state = initialState, action) => {
             StateCopy.sliderContentForShow = StateCopy.sliderContent.slice(0, 3)
             StateCopy.sliderText = StateCopy.sliderContentForShow[1].text
             StateCopy.slidePosition = 'center'
-            
             return StateCopy
         }
         case (action.type === INITIAL_SLIDE_RIGHT) : {     
@@ -153,8 +167,30 @@ const ButtonsReducer = (state = initialState, action) => {
                 StateCopy.reactText = false
                 return state
             }
-
-
+        }
+        case (action.type === SHOW_SECTION1_TEXT) : {
+            let copyState = {...state}
+            copyState.isShowedSection1Text = true
+            return copyState
+        }
+        case (action.type === SHOW_SECTION4_TEXT) : {
+            let copyState = {...state}
+            copyState.isShowedSection4Text = true
+            return copyState
+        }
+        case (action.type === SHOW_SECTION5_TEXT) : {
+            let copyState = {...state}
+            copyState.isSection5TextsShowed = false
+            return copyState
+        }
+        case (action.type === CHANGE_SECTION5_TEXT) : {
+            let copyState = {...state}
+            copyState.section5TextsIndex++
+            if (copyState.section5TextsIndex === copyState.section5Texts.length) {
+                copyState.section5TextsIndex = 0
+            }
+            copyState.isSection5TextsShowed = true
+            return copyState
         }
         default:
             return {...state}

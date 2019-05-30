@@ -16,7 +16,23 @@ const keyFrames = keyframes`
 `
 
 export const PhoneNumDiv = styled.div`
+    // width: 200px
     color: red;
     animation: ${keyFrames} 30s linear infinite
-    font-size: 1.5em
+    font-size: 1.1em
+    position: relative;
+    left: -30px;
+    transform: rotateZ(-3deg);
+    top: 50px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    z-index: 4;
+    `
+export const PhoneNumberP = styled.p`
+    // transition: all .5s
+    // @media (min-width: 1000px) {
+    //     font-size: 1.2em;
+    // }
+    
 `

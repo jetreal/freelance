@@ -5,7 +5,6 @@ import Slider from '../Slider/Slider';
 import { ReviewsItemDivText, ReviewsDiv, ReviewsItemP  } from '../StyledComponents';
 
 const Section3 = (props) => {
-    console.log(props)
     return (
         <div>
                         <ReviewsDiv>

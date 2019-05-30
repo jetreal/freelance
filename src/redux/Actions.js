@@ -4,7 +4,11 @@ import { RIGHT_BUTTON_CLICK,
          CHANGE_TV,
          CHANGE_POINTS_PLACE_WITH_DELAY,
          LEFT_SLIDE,
-         RIGHT_SLIDE
+         RIGHT_SLIDE,
+         SHOW_SECTION1_TEXT,
+         SHOW_SECTION4_TEXT,
+         SHOW_SECTION5_TEXT,
+         CHANGE_SECTION5_TEXT
           } from './Constants';
 
 export function button1ClickAC(id) {
@@ -41,5 +45,29 @@ export function leftSlide() {
 export function rightSlide() {
     return {
         type: RIGHT_SLIDE
+    }
+}
+
+export function showSection1Text() {
+    return {
+        type: SHOW_SECTION1_TEXT
+    }
+}
+
+export function showSection4Text() {
+    return {
+        type: SHOW_SECTION4_TEXT
+    }
+}
+
+export function showSection5Text() {
+    return {
+        type: SHOW_SECTION5_TEXT
+    }
+}
+
+export function changeSection5Text() {
+    return {
+        type: CHANGE_SECTION5_TEXT
     }
 }

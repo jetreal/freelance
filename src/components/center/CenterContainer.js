@@ -5,7 +5,12 @@ import { changePointsPlace,
          changeTV,
          changePointsPlaceDelay,
          leftSlide,
-         rightSlide } from '../../redux/Actions';
+         rightSlide, 
+         showSection1Text,
+         showSection4Text,
+         showSection5Text,
+         changeSection5Text
+        } from '../../redux/Actions';
 
 
 let mapStateToProps = (state) => {
@@ -29,7 +34,11 @@ const CenterContainer = connect(mapStateToProps,
      changeTV,
      changePointsPlaceDelay,
      leftSlide,
-     rightSlide
+     rightSlide,
+     showSection1Text,
+     showSection4Text,
+     showSection5Text,
+     changeSection5Text
 })(Center)
 
 export default CenterContainer
