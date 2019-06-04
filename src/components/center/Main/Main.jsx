@@ -12,7 +12,7 @@ import Section1 from './Section1/Section1';
 import Section5 from './Section5/Section5';
 
 const Main = (props) => {
-    
+    console.log(props)
     switch (props.btnIndex) {
         case 1: {
             return (
@@ -24,7 +24,9 @@ const Main = (props) => {
                         btnIndex={props.btnIndex} />
                         
                     <Section1 showSection1Text={props.showSection1Text}
-                              isShowedSection1Text={props.isShowedSection1Text}/>
+                              isShowedSection1Text={props.isShowedSection1Text}
+                              textsForFirstSection={props.textsForFirstSection}
+                              isLang={props.isLang}/>
 
                 </div>
               
@@ -40,7 +42,9 @@ const Main = (props) => {
 
                     <Section2 pointsPosition={props.pointsPosition}
                         pointsPositionWithDelay={props.pointsPositionWithDelay}
-                        changePointsPlace={props.changePointsPlace} />
+                        changePointsPlace={props.changePointsPlace}
+                        showMap={props.showMap}
+                        tvIndex={props.tvIndex} />
 
                 </div>
             )
@@ -59,6 +63,7 @@ const Main = (props) => {
                         rightSlide={props.rightSlide}
                         sliderText={props.sliderText}
                         isBlockedSlider={props.isBlockedSlider}
+                        isLang={props.isLang}
                     />
 
                 </div>
@@ -72,7 +77,9 @@ const Main = (props) => {
                         texts={props.texts}
                         btnIndex={props.btnIndex} />
                     <Section4 isShowedSection4Text={props.isShowedSection4Text}
-                            showSection4Text={props.showSection4Text} />
+                            showSection4Text={props.showSection4Text}
+                            section4Texts={props.section4Texts}
+                            isLang={props.isLang} />
                 </div>
             )
         }
@@ -86,14 +93,16 @@ const Main = (props) => {
                               isSection5TextsShowed={props.isSection5TextsShowed}
                               section5TextsIndex={props.section5TextsIndex}
                               showSection5Text={props.showSection5Text}
-                              changeSection5Text={props.changeSection5Text}/>
+                              changeSection5Text={props.changeSection5Text}
+                              isLang={props.isLang}
+                              isStartedSection5Text={props.isStartedSection5Text}
+                              startShowSection5Text={props.startShowSection5Text}/>
                     
                 </div>
             )
         }
         case 6: {
             return (
-
 
                 <div className={styles.main}>
                     <HeaderText isLang={props.isLang}
@@ -107,11 +116,9 @@ const Main = (props) => {
     return (
         <div className={styles.main}>
             
-
             <HeaderText isLang={props.isLang}
                 texts={props.texts}
                 btnIndex={props.btnIndex} />
-
 
         </div>
     )

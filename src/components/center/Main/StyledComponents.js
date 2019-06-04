@@ -14,7 +14,7 @@ left: 0;
 `;
 export const FirstPointDiv = styled.div`
     display: grid;
-    grid-template-columns: auto 250px
+    grid-template-columns: ${props => props.pointsPosition === 2 ? 'auto 250px' : 'auto 30px' } 
     align-content: center;
     position: absolute;
     top: ${props => props.pointsPosition === 0 ? '200px' : null ||
@@ -44,7 +44,7 @@ export const FirstPointDiv = styled.div`
 
 export const SecondPointDiv = styled.div`
     display: grid;
-    grid-template-columns: auto 250px
+    grid-template-columns: ${props => props.pointsPosition === 0 ? 'auto 250px' : 'auto 30px' }
     align-content: center;
     position: absolute;
     top: ${props => props.pointsPosition === 1 ? '200px' : null ||
@@ -73,7 +73,7 @@ export const SecondPointDiv = styled.div`
 `
 export const ThirdPointDiv = styled.div`
     display: grid;
-    grid-template-columns: auto 250px
+    grid-template-columns: ${props => props.pointsPosition === 1 ? 'auto 250px' : 'auto 30px' }
     align-content: center;
     position: absolute;
     top: ${props => props.pointsPosition === 2 ? '200px' : null ||
@@ -153,6 +153,7 @@ export const ContactTextDiv = styled.div`
     position: absolute
     top: 15px
     left: 65px
+    z-index: -1
     transition: font-size .3s
     @media (max-width: 800px) {
         font-size: .92em;
@@ -169,7 +170,7 @@ export const ReviewsDiv = styled.div`
     width: 0
     height: 0
     position: relative
-    top: -30px
+    top: -50px
     margin: 0 auto
     display: grid
     grid-template-columns: auto auto
@@ -191,6 +192,7 @@ export const ReviewsItemDivText = styled.div`
     left: -20px
     top: 45px
     width: 250px
+    // transform: rotateX(50deg);
     height: 150px
     border-top: 1px solid gray
     border-bottom: 1px solid gray
@@ -223,7 +225,7 @@ export const SixSectionDiv = styled.div`
 
 `
 
-export const Overlap = styled.div`
+export const OverlapDiv = styled.div`
     width: ${props => props.reactText === true ? '0': '100%'};
     transition: width 1s
     height: 120px

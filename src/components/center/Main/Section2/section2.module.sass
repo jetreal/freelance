@@ -8,19 +8,7 @@
     position: relative
     top: -50px
 
-.myPhoto
-    position: absolute
-    top: 45px
-    left: -205px
-    z-index: 2
 
-.myPhoto img
-
-    width: 150px
-    height: 150px
-    border-radius: 100%
-    border: 1px solid gray
-    box-shadow: -2px 2px 2px black
 
 .centerPoint
     display: grid
@@ -52,3 +40,12 @@
 .hour24:active
     transform: scale(.9,.9)
     border-radius: 100%
+
+.mapPoint
+    position: absolute
+    top: 284px
+    left: 176px
+    &:hover
+        transition: transform .2s
+        transform: rotateZ(360deg)
+        cursor: pointer

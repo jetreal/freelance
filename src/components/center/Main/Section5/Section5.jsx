@@ -11,9 +11,9 @@ class Section5 extends React.Component {
     }
 
 
-    // componentDidMount() {
-    //     setTimeout(() => this.props.changeSection5Text(), 700);
-    // }
+    componentDidMount() {
+        setTimeout(() => this.props.startShowSection5Text(), 700);
+    }
 
     // componentWillUnmount() {
     //     setTimeout(() => this.props.showSection5Text(), 20);
@@ -27,13 +27,16 @@ class Section5 extends React.Component {
                 transitionName="fade"
                 transitionEnterTimeout={5000}
                 transitionLeaveTimeout={300}>
-                <Section5Div isSection5TextsShowed={this.props.isSection5TextsShowed}>
+                <Section5Div isSection5TextsShowed={this.props.isSection5TextsShowed}
+                             isStartedSection5Text={this.props.isStartedSection5Text}>
                     <img className={styles.checkMark}
                         src={'/images/checkMark2.png'}
                         onClick={this.props.showSection5Text} />
 
                     <p className={styles.section5Text}>
-                        {this.props.section5Texts[this.props.section5TextsIndex].textRu}
+                        { this.props.isLang === true ? 
+                            this.props.section5Texts[this.props.section5TextsIndex].textEn :
+                            this.props.section5Texts[this.props.section5TextsIndex].textRu}
                     </p>
                 </Section5Div>
             </ReactCSSTransitionGroup>

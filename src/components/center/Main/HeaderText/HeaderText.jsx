@@ -8,7 +8,6 @@ const HeaderText = (props) => {
                         {props.isLang === false ?
                             props.texts[props.btnIndex - 1].textRu :
                             props.texts[props.btnIndex - 1].textEn}
-
                     </p>
                 </div>
     )

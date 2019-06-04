@@ -2,22 +2,24 @@ import React from 'react';
 import styles from './section6.module.sass'
 import {
     SixSectionDiv,
-    Overlap
+    OverlapDiv
 } from '../StyledComponents';
 
 const Section6 = (props) => {
     return (
         <div>
             <SixSectionDiv>
-                <div className={styles.logo1}></div>
-                <div className={styles.logo4}>
+                <div className={styles.beforeLine}> </div>
+
+                <div className={styles.reactWrappDiv}>
                     <div className={styles.reactCenterLine}></div>
                     <p>ReactJS</p>
                 </div>
-                <div className={styles.logo3}></div>
-                <Overlap reactText={props.reactText}>
+                
+                <div className={styles.afterLine}> </div>
 
-                </Overlap>
+                <OverlapDiv reactText={props.reactText}>
+                </OverlapDiv>
             </SixSectionDiv>
         </div>
     )

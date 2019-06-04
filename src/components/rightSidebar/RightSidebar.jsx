@@ -1,16 +1,17 @@
 import React from 'react'
 import styles from './rightSidebar.module.sass'
 import Button from './button/Button';
+import { FaHome, FaRegUser, FaRegComment, FaBalanceScale, FaRegCheckCircle, FaWhmcs } from 'react-icons/fa';
 
 
 
-
+const icons = [FaHome, FaRegUser, FaRegComment, FaBalanceScale, FaRegCheckCircle, FaWhmcs ]
 
 const RightSidebar = (props) => {
-
-        let btns = props.buttons.buttons.map( (b) => {
+        console.log(icons)
+        let btns = props.buttons.buttons.map( (b, index) => {
             return <Button key={b.id}
-                           name={b.name} 
+                           name={icons[index]()}
                            checked={b.isActiveColor} 
                            handleClick={props.handleClick.bind(this, b.id)}/>
         } )

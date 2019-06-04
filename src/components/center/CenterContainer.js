@@ -9,7 +9,9 @@ import { changePointsPlace,
          showSection1Text,
          showSection4Text,
          showSection5Text,
-         changeSection5Text
+         changeSection5Text,
+         showMap,
+         startShowSection5Text
         } from '../../redux/Actions';
 
 
@@ -38,7 +40,9 @@ const CenterContainer = connect(mapStateToProps,
      showSection1Text,
      showSection4Text,
      showSection5Text,
-     changeSection5Text
+     changeSection5Text,
+     startShowSection5Text,
+     showMap
 })(Center)
 
 export default CenterContainer

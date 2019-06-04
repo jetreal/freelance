@@ -16,15 +16,15 @@ const keyFrames = keyframes`
 `
 
 export const PhoneNumDiv = styled.div`
-    // width: 200px
     color: red;
     animation: ${keyFrames} 30s linear infinite
     font-size: 1.1em
     position: relative;
     left: -30px;
     transform: rotateZ(-3deg);
-    top: 50px;
+    top: 54px;
     display: grid;
+    grid-template-columns: 0px auto
     justify-content: center;
     align-content: center;
     z-index: 4;

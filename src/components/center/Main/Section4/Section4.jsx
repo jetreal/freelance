@@ -19,11 +19,9 @@ class Section4 extends React.Component {
         return (
             <FourSectionDiv>
                             <FourSectionInnerDiv isShowedSection4Text={this.props.isShowedSection4Text}>
-                                <p>Lorem ipsum dolor sit amet consectetur
-                                     adipisicing elit. Quae minus cupiditate
-                                      sed sunt accusamus consectetur laborum nesciunt?
-                                       In tempora dolore tenetur rem quis facere dignissimos
-                                           minus sapiente, quae consequatur hic!</p>
+                                <p>{this.props.isLang === true ? 
+                                this.props.section4Texts[0].leftText :
+                                this.props.section4Texts[1].leftText}</p>
                             </FourSectionInnerDiv>
                             <MediaQuery query="(min-width: 1081px)">
                                 <FourSectionInnerDiv>
@@ -32,11 +30,9 @@ class Section4 extends React.Component {
                             </MediaQuery>
     
                             <FourSectionInnerDiv isShowedSection4Text={this.props.isShowedSection4Text}>
-                                <p>Lorem ipsum dolor sit amet consectetur
-                                         adipisicing elit. Quae minus cupiditate
-                                          sed sunt accusamus consectetur laborum nesciunt?
-                                           In tempora dolore tenetur rem quis facere dignissimos
-                                           minus sapiente, quae consequatur hic!</p>
+                                <p>{this.props.isLang === true ? 
+                                this.props.section4Texts[0].rightText :
+                                this.props.section4Texts[1].rightText}</p>
                             </FourSectionInnerDiv>
                         </FourSectionDiv>
         )

@@ -9,22 +9,25 @@ import SoundLeft from './TableSection/SoundLeft/SoundLeft';
 import Table from './TableSection/Table/Table';
 import TvRemote from './TableSection/TvRemote/TvRemote';
 import SofaImage from './Sofa/SofaImage/SofaImage';
+import MapComponent from './Sofa/Map/MapComponent';
 
 
 const Atributes = (props) => {
-
+    console.log(props)
     return (
         <div className={styles.attributes}>
 
             <TableSection>
                 <SoundLeft />
                 <Table />
-                <TvRemote changeTV={props.changeTV} />
+                <TvRemote changeTV={props.changeTV}
+                        isShowMap={props.isShowMap} />
             </TableSection>
 
             <Sofa>
                 <WrappTv>
-                    <Tv tvIndex={props.tvIndex} />
+                    {props.isShowMap === true && <MapComponent />}
+                    <Tv tvIndex={props.tvIndex} changeTV={props.changeTV} />
                 </WrappTv>
                 <SofaImage />
             </Sofa>

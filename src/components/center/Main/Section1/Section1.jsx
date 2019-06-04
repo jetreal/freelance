@@ -9,7 +9,7 @@ class Section1 extends React.Component {
     }
     
     componentDidMount() {
-        setTimeout(() => this.props.showSection1Text(), 2000);
+        setTimeout(() => this.props.showSection1Text(), 1500);
     }
 
     render() {
@@ -17,23 +17,10 @@ class Section1 extends React.Component {
         return (
             <SectionTextDiv isShowedSection1Text={this.props.isShowedSection1Text}>
                 <p className={styles.sectionText}>
-                    Lorem ipsum dolor sit 
-                    amet consectetur adipisicing
-                     elit. At dolor praesentium eos
-                      quisquam tenetur atque, sapiente
-                       deserunt nisi distinctio! Mollitia
-                        tempore doloribus est, impedit sit
-                         ab exercitationem labore dolorum vero
-                          quas distinctio natus accusamus id
-                           cupiditate at rem praesentium architecto
-                            ea placeat quis consequatur dicta libero illo?
-                             Necessitatibus, sed veniam.
-                    Lorem ipsum dolor sit amet consectetur
-                     adipisicing elit. Commodi accusamus, 
-                     illo sed expedita nisi deleniti vel,
-                      corporis laboriosam unde dolor eius 
-                      voluptatum nemo error cumque adipisci 
-                      soluta blanditiis modi illum?
+                    {this.props.isLang === false ? 
+                    this.props.textsForFirstSection[1] : this.props.textsForFirstSection[0] }
+
+                   
                 </p>
             </SectionTextDiv>
     

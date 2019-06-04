@@ -12,7 +12,9 @@ import { RIGHT_BUTTON_CLICK,
         SHOW_SECTION1_TEXT,
         SHOW_SECTION4_TEXT,
         SHOW_SECTION5_TEXT,
-        CHANGE_SECTION5_TEXT
+        CHANGE_SECTION5_TEXT,
+        SHOW_MAP,
+        START_SHOW_SECTION5_TEXT
     } from "./Constants";
 
 
@@ -39,20 +41,45 @@ isLang: false,
 langBtnNames: [ 'ru', 'en' ],
 phoneNum: '+ 7 952 964 57 21',
 headerText: [ 'Создание Cайтов', 'The Sites Creating'],
+textsForFirstSection: ['Lorem ipsum dolor sit \
+amet consectetur adipisicing \
+ elit. At dolor praesentium eos\
+  quisquam tenetur atque, sapiente\
+   deserunt nisi distinctio! Mollitia\
+    tempore doloribus est, impedit sit\
+     ab exercitationem labore dolorum vero\
+      quas distinctio natus accusamus id\
+       cupiditate at rem praesentium architecto\
+        ea placeat quis consequatur dicta libero illo?\
+         Necessitatibus, sed veniam.\
+Lorem ipsum dolor sit amet consectetur\
+ adipisicing elit. Commodi accusamus, \
+ illo sed expedita nisi deleniti vel,\
+  corporis laboriosam unde dolor eius \
+  voluptatum nemo error cumque adipisci \
+  soluta blanditiis modi illum?', 
+  ' какой-то очень длинный тексе на русском \
+  какой-то очень длинный тексе на русском\
+  какой-то очень длинный тексе на русском'],
+section4Texts: [
+    {leftText: ' Some long en left text ', rightText: 'Some long en right text'},
+    {leftText: ' какой-то длинный русский левый текст ', rightText: 'какой-то длинный русский правый текст'}
+],
+
 pointsPosition: 0, // 0 - 2
 pointsPositionWithDelay: 0, // 0 - 2
 slidePosition: 'center',
 sliderContent: [
-	{"text":"1 Лучший сайт в мире","textEn":"1en", "url":"/images/soundRight.jpg"},
-	{"text":"2 Топовый фрилансер ","textEn":"2en", "url":"/images/soundLeft.jpg"},
-	{"text":"3 Однозначно вы все правы","textEn":"3en", "url":"/images/3.jpg"},
-	{"text":"4 Да это так","textEn":"4en", "url":"/images/4.jpg"},
-	{"text":"5 Всё красиво!","textEn":"5en", "url":"/images/5.jpg"}
+	{"textRu":"1 Лучший сайт в мире", "textEn":"1en", "url":"/images/soundRight.jpg"},
+	{"textRu":"2 Топовый фрилансер ", "textEn":"2en", "url":"/images/soundLeft.jpg"},
+	{"textRu":"3 Однозначно вы все правы", "textEn":"3en", "url":"/images/3.jpg"},
+	{"textRu":"4 Да это так","textEn": "4en", "url":"/images/4.jpg"},
+	{"textRu":"5 Всё красиво!","textEn": "5en", "url":"/images/5.jpg"}
 ],
 sliderContentForShow: [
-    {"text":"1", "url":"/images/soundRight.jpg"},
-	{"text":"2", "url":"/images/soundLeft.jpg"},
-	{"text":"3", "url":"/images/3.jpg"}
+    {"textRu":"1", "textEn":"1en", "url":"/images/soundRight.jpg"},
+	{"textRu":"2", "textEn":"2en", "url":"/images/soundLeft.jpg"},
+	{"textRu":"3", "textEn":"3en", "url":"/images/3.jpg"}
 ],
 
 sliderBgImg: "/images/soundLeft.jpg",
@@ -68,7 +95,9 @@ section5Texts: [
     {id: 4, textRu: 'русский текст 4', textEn: 'englighh text 4'}
 ],
 isSection5TextsShowed: true,
-section5TextsIndex: 0
+isStartedSection5Text: false,
+section5TextsIndex: 0,
+isShowMap: false
 }
 
 const ButtonsReducer = (state = initialState, action) => {
@@ -93,7 +122,14 @@ const ButtonsReducer = (state = initialState, action) => {
         }
         case (action.type === CHANGE_LANG) : {
             let copyState = {...state}
+            // console.log(StateCopy.sliderContentForShow)
+            // StateCopy.sliderContentForShow = StateCopy.sliderContent.slice(0, 3)
             copyState.isLang = !state.isLang;
+                if (copyState.isLang === false) {
+                    copyState.sliderText = copyState.sliderContentForShow[1].textRu
+                } else {
+                    copyState.sliderText = copyState.sliderContentForShow[1].textEn
+                }
             return copyState
         }
         case (action.type === CHANGE_POINTS_PLACE): {
@@ -139,7 +175,12 @@ const ButtonsReducer = (state = initialState, action) => {
             let x = StateCopy.sliderContent.shift()
             StateCopy.sliderContent.push(x)
             StateCopy.sliderContentForShow = StateCopy.sliderContent.slice(0, 3)
-            StateCopy.sliderText = StateCopy.sliderContentForShow[1].text
+            if (StateCopy.isLang === false) {
+                StateCopy.sliderText = StateCopy.sliderContentForShow[1].textRu
+            } else {
+                StateCopy.sliderText = StateCopy.sliderContentForShow[1].textEn
+            }
+
             StateCopy.slidePosition = 'center'
             return StateCopy
         }
@@ -148,7 +189,12 @@ const ButtonsReducer = (state = initialState, action) => {
             let x = StateCopy.sliderContent.pop()
             StateCopy.sliderContent = [x, ...StateCopy.sliderContent]
             StateCopy.sliderContentForShow = StateCopy.sliderContent.slice(0, 3)
-            StateCopy.sliderText = StateCopy.sliderContentForShow[1].text
+            if (StateCopy.isLang === false) {
+                StateCopy.sliderText = StateCopy.sliderContentForShow[1].textRu
+            } else {
+                StateCopy.sliderText = StateCopy.sliderContentForShow[1].textEn
+            }
+
             StateCopy.slidePosition = 'center'
             
             return StateCopy
@@ -178,6 +224,11 @@ const ButtonsReducer = (state = initialState, action) => {
             copyState.isShowedSection4Text = true
             return copyState
         }
+        case (action.type === START_SHOW_SECTION5_TEXT) : {
+            let copyState = {...state}
+            copyState.isStartedSection5Text = true
+            return copyState
+        }
         case (action.type === SHOW_SECTION5_TEXT) : {
             let copyState = {...state}
             copyState.isSection5TextsShowed = false
@@ -190,6 +241,12 @@ const ButtonsReducer = (state = initialState, action) => {
                 copyState.section5TextsIndex = 0
             }
             copyState.isSection5TextsShowed = true
+            return copyState
+        }
+        case (action.type === SHOW_MAP) : {
+            let copyState = {...state};
+            copyState.isShowMap = !copyState.isShowMap
+            
             return copyState
         }
         default:

@@ -8,7 +8,9 @@ import { RIGHT_BUTTON_CLICK,
          SHOW_SECTION1_TEXT,
          SHOW_SECTION4_TEXT,
          SHOW_SECTION5_TEXT,
-         CHANGE_SECTION5_TEXT
+         CHANGE_SECTION5_TEXT,
+         SHOW_MAP,
+         START_SHOW_SECTION5_TEXT
           } from './Constants';
 
 export function button1ClickAC(id) {
@@ -59,7 +61,11 @@ export function showSection4Text() {
         type: SHOW_SECTION4_TEXT
     }
 }
-
+export function startShowSection5Text() {
+    return {
+        type: START_SHOW_SECTION5_TEXT
+    }
+}
 export function showSection5Text() {
     return {
         type: SHOW_SECTION5_TEXT
@@ -69,5 +75,11 @@ export function showSection5Text() {
 export function changeSection5Text() {
     return {
         type: CHANGE_SECTION5_TEXT
+    }
+}
+
+export function showMap() {
+    return {
+        type: SHOW_MAP
     }
 }

@@ -3,6 +3,7 @@ import styles from './center.module.sass'
 import Main from './Main/Main';
 import Atributes from './Atributes/Atributes';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import Colomn from './Colomn/Colomn';
 
 
 
@@ -16,6 +17,9 @@ const Center = (props) => {
          {/* <div className={styles.topMidlware}>
 
          </div> */}
+         <Colomn className={styles.columnLeft}/>
+         {/* <Colomn className={styles.columnRight}/> */}
+
          <Main btnIndex ={props.buttons.activeButtonNum}
                tvIndex={props.buttons.tvIndex}
                texts={props.buttons.texts} 
@@ -39,13 +43,20 @@ const Center = (props) => {
                section5Texts={props.buttons.section5Texts}
                isSection5TextsShowed={props.buttons.isSection5TextsShowed}
                section5TextsIndex={props.buttons.section5TextsIndex}
+               startShowSection5Text={props.startShowSection5Text}
+               isStartedSection5Text={props.buttons.isStartedSection5Text}
                showSection5Text={props.showSection5Text}
                changeSection5Text={props.changeSection5Text}
+               showMap={props.showMap}
+               tvIndex={props.buttons.tvIndex}
+               textsForFirstSection={props.buttons.textsForFirstSection}
+               section4Texts={props.buttons.section4Texts}
                
                />
                
          <Atributes changeTV={props.changeTV}
-                    tvIndex={props.buttons.tvIndex}/>
+                    tvIndex={props.buttons.tvIndex}
+                    isShowMap={props.buttons.isShowMap}/>
 
         </div>
     )

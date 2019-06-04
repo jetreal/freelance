@@ -2,9 +2,8 @@ import styled from 'styled-components'
 
 export const Section5Div = styled.div`
 transform: ${props => props.isSection5TextsShowed === true ? 'scale(1,1) translateY(0px)' : 'scale(.2,.5) translateY(350px)'};
-
-
-transition: transform 2s;
+opacity: ${props => props.isStartedSection5Text === false ? '0' : '1' };
+transition: transform 2s, opacity 2s;
 border: 1px solid gray;
 position: relative;
 margin: 0 auto;
