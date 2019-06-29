@@ -19,13 +19,13 @@ const Slider = (props) => {
             </BgSliderDiv>
             {Images}
             {/* <ImgDiv slidePosition={props.slidePosition}>
-                <img src={'/images/soundRight.jpg'}/>
+                <img src={'images/soundRight.jpg'}/>
             </ImgDiv>
             <ImgDiv slidePosition={props.slidePosition}>
-                <img src={'/images/soundLeft.jpg'}/>
+                <img src={'images/soundLeft.jpg'}/>
             </ImgDiv>
             <ImgDiv slidePosition={props.slidePosition}>
-                <img src={'/images/soundRight.jpg'}/>
+                <img src={'images/soundRight.jpg'}/>
             </ImgDiv> */}
 
            

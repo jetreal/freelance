@@ -5,8 +5,14 @@
     padding-right: 15px
         
 .checkMark
+    border: 1px solid grey
+    background-color: rgba(20,20,20,.2)
+    border-radius: 100%
     position: relative
     width: 40px
     top: 12px
     left: 12px
     cursor: pointer
+    transition: transform .5s
+    &:hover
+        transform: scale(1.1, 1.1)

@@ -24,7 +24,7 @@ export const ImgDiv = styled.div`
     top: 0px
     width: 150px
     height: 150px
-    border-left: 1px solid gray
+
     opacity: ${props => props.slidePosition === 'center' ? '0' : '1'}
     transition: ${props => props.slidePosition === 'center' ? 'transform 0s' : 'transform 1s'}
 

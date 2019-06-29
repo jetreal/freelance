@@ -11,6 +11,6 @@ width: 90%;
 background-color: rgba(10, 10, 10, .5);
 border-radius: 4px;
 display: grid;
-grid-template-columns: auto auto;
+grid-template-columns: 40px auto;
 
 `

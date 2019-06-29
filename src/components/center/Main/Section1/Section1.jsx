@@ -19,11 +19,8 @@ class Section1 extends React.Component {
                 <p className={styles.sectionText}>
                     {this.props.isLang === false ? 
                     this.props.textsForFirstSection[1] : this.props.textsForFirstSection[0] }
-
-                   
                 </p>
             </SectionTextDiv>
-    
         )
     }
 }

@@ -22,7 +22,7 @@ const Header = (props) => {
                 <PhoneNumber phoneNum={props.phoneNum} />
             </WrapperGrid>
 
-            <img src={'/images/ceiling.jpg'} />
+            <img src={'images/ceiling.jpg'} />
         </div>
     )
 }

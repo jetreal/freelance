@@ -19,20 +19,20 @@ class Section4 extends React.Component {
         return (
             <FourSectionDiv>
                             <FourSectionInnerDiv isShowedSection4Text={this.props.isShowedSection4Text}>
-                                <p>{this.props.isLang === true ? 
-                                this.props.section4Texts[0].leftText :
-                                this.props.section4Texts[1].leftText}</p>
+                                <ul>{this.props.isLang === true ? 
+                                this.props.section4Texts[0].leftTexts.map( item => <li>{item}</li>) :
+                                this.props.section4Texts[1].leftTexts.map( item => <li>{item}</li>)}</ul>
                             </FourSectionInnerDiv>
-                            <MediaQuery query="(min-width: 1081px)">
+                            {/* <MediaQuery query="(min-width: 1081px)">
                                 <FourSectionInnerDiv>
     
                                 </FourSectionInnerDiv>
-                            </MediaQuery>
+                            </MediaQuery> */}
     
-                            <FourSectionInnerDiv isShowedSection4Text={this.props.isShowedSection4Text}>
-                                <p>{this.props.isLang === true ? 
-                                this.props.section4Texts[0].rightText :
-                                this.props.section4Texts[1].rightText}</p>
+                            <FourSectionInnerDiv className={styles.rightSideDiv}isShowedSection4Text={this.props.isShowedSection4Text}>
+                                <ul>{this.props.isLang === true ? 
+                                this.props.section4Texts[0].rightTexts.map( item => <li>{item}</li>) :
+                                this.props.section4Texts[1].rightTexts.map( item => <li>{item}</li>)}</ul>
                             </FourSectionInnerDiv>
                         </FourSectionDiv>
         )

@@ -25,7 +25,7 @@ class Tv extends React.Component {
         return (
             <div className={styles.tv} >
                 <video ref={this.myRef} className={styles.tvImg}
-                    src={`/video/${this.props.tvIndex}.mp4`}
+                    src={`video/${this.props.tvIndex}.mp4`}
                     autoPlay
                 ></video>
             </div>

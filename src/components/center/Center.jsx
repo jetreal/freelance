@@ -4,6 +4,8 @@ import Main from './Main/Main';
 import Atributes from './Atributes/Atributes';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Colomn from './Colomn/Colomn';
+import ColumnShadow from './Colomn/ColumnShadow/ColumnShadow';
+import ColumnShadow2 from './Colomn/ColumnShadow2/ColumnShadow2';
 
 
 
@@ -12,11 +14,25 @@ const Center = (props) => {
     let x = props.buttons.activeButtonNum
     return (
         <div className={x !== 1 ? styles.center : styles.center2}
-            style={{ backgroundImage: `url(/images/${x}.jpg)` }} >
+            style={{ backgroundImage: `url(images/${x}.jpg)` }} >
             
          {/* <div className={styles.topMidlware}>
 
          </div> */}
+
+         {props.buttons.activeButtonNum === 6 ?  
+         <div>
+         <div className={styles.jsDiv}>
+            <img className={styles.js} src='images/js3.png'/>
+         </div>
+         <div className={styles.jetrealDiv}>
+            <img className={styles.jetrealLogo} src='images/jetrealLogo.png'/>
+         </div> 
+         </div> : null }
+         
+        
+         <ColumnShadow2 />
+         <ColumnShadow />
          <Colomn className={styles.columnLeft}/>
          {/* <Colomn className={styles.columnRight}/> */}
 
@@ -51,6 +67,7 @@ const Center = (props) => {
                tvIndex={props.buttons.tvIndex}
                textsForFirstSection={props.buttons.textsForFirstSection}
                section4Texts={props.buttons.section4Texts}
+               section3DownText={props.buttons.section3DownText}
                
                />
                

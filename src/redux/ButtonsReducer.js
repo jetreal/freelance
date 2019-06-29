@@ -1,9 +1,9 @@
 import { RIGHT_BUTTON_CLICK,
-     CHANGE_LANG,
-      CHANGE_POINTS_PLACE,
-       CHANGE_TV,
+        CHANGE_LANG,
+        CHANGE_POINTS_PLACE,
+        CHANGE_TV,
         CHANGE_POINTS_PLACE_WITH_DELAY,
-         LEFT_SLIDE,
+        LEFT_SLIDE,
         RIGHT_SLIDE, 
         INITIAL_SLIDE_LEFT,
         INITIAL_SLIDE_RIGHT,
@@ -30,69 +30,88 @@ let initialState = {
 activeButtonNum: 1,
 tvIndex: 1,
 texts: [
-    { id: 1, textRu: 'text 1', textEn: 'text on english1'},
-    { id: 2, textRu: 'text 2', textEn: 'text on english2'},
-    { id: 3, textRu: 'text 3', textEn: 'text on english3'},
-    { id: 4, textRu: 'text 4', textEn: 'text on english4'},
-    { id: 5, textRu: 'text 5', textEn: 'text on english5'},
-    { id: 6, textRu: 'text 6', textEn: 'text on english6'}
+    { id: 1, textRu: 'О нас', textEn: 'About us'},
+    { id: 2, textRu: 'Как нас найти', textEn: 'How to find me'},
+    { id: 3, textRu: 'Отзывы', textEn: 'Reviews'},
+    { id: 4, textRu: 'Наши Преимушества', textEn: 'Our advantages'},
+    { id: 5, textRu: 'Наши предложения:', textEn: 'My suggestions:'},
+    { id: 6, textRu: 'Основная используемая технология:', textEn: 'The main technology used:'}
 ],
 isLang: false,
 langBtnNames: [ 'ru', 'en' ],
 phoneNum: '+ 7 952 964 57 21',
 headerText: [ 'Создание Cайтов', 'The Sites Creating'],
-textsForFirstSection: ['Lorem ipsum dolor sit \
-amet consectetur adipisicing \
- elit. At dolor praesentium eos\
-  quisquam tenetur atque, sapiente\
-   deserunt nisi distinctio! Mollitia\
-    tempore doloribus est, impedit sit\
-     ab exercitationem labore dolorum vero\
-      quas distinctio natus accusamus id\
-       cupiditate at rem praesentium architecto\
-        ea placeat quis consequatur dicta libero illo?\
-         Necessitatibus, sed veniam.\
-Lorem ipsum dolor sit amet consectetur\
- adipisicing elit. Commodi accusamus, \
- illo sed expedita nisi deleniti vel,\
-  corporis laboriosam unde dolor eius \
-  voluptatum nemo error cumque adipisci \
-  soluta blanditiis modi illum?', 
-  ' какой-то очень длинный тексе на русском \
-  какой-то очень длинный тексе на русском\
-  какой-то очень длинный тексе на русском'],
+textsForFirstSection: ['We are a web studio that creates fast and beautiful sites.\
+ You will be satisfied with our work, because you get exactly what you want.\
+  The design will be developed taking into account the tasks of the site,\
+   as well as taking into account the attention of the target audience.\
+    We apply the most modern technologies that increase the performance of the site.\
+     For a higher quality service, we are in constant dialogue with the client.\
+      You will be heard, and your goals will be fulfilled, because we work for you.',
+
+  'Мы веб студия, которая создаёт, быстрые и красивые сайты. \
+  Вы останетесь довольны нашей работой,\
+   потому что получите именно то что хотите. \
+  Дизайн будет разработан с учётом задач сайта, а также с учётом внимания целевой аудитории. \
+  Мы применяем самые современные технологии, увеличивающие производительность сайта.\
+  Для более высокого качества сервиса, мы находимся в постоянном диалоге с клиентом.\
+  Вы будете обязательно услышаны, а ваши цели обязательно выполнены, потому что мы работаем именно для вас. \
+  '],
 section4Texts: [
-    {leftText: ' Some long en left text ', rightText: 'Some long en right text'},
-    {leftText: ' какой-то длинный русский левый текст ', rightText: 'какой-то длинный русский правый текст'}
+    {leftTexts: [' Cosmically cool images',
+                 'Dynamic animation', 
+                 'The most worthy overall picture',
+                 'Minimalism - nothing superfluous',
+                 "Author's approach"] ,
+                 
+    rightTexts: ['Guaranteed results.',
+                 'We work 24/7.',
+                 'Acceptable prices.',
+                 'Discounts for regular customers']},
+
+
+    {leftTexts: ['Космически крутые образы',
+                 'Динамичная анимация',
+                 'Достойнейшая общая картина',
+                 'Минимализм - ничего лишнего',
+                 'Авторский подход'],
+    rightTexts: ['Гарантия результата.',
+                 'Работаем 24/7.',
+                 'Приемлемые цены.',
+                'Скидки постоянным клиентам']}
 ],
 
-pointsPosition: 0, // 0 - 2
+pointsPosition: 0, // 0 - 2 
 pointsPositionWithDelay: 0, // 0 - 2
 slidePosition: 'center',
 sliderContent: [
-	{"textRu":"1 Лучший сайт в мире", "textEn":"1en", "url":"/images/soundRight.jpg"},
-	{"textRu":"2 Топовый фрилансер ", "textEn":"2en", "url":"/images/soundLeft.jpg"},
-	{"textRu":"3 Однозначно вы все правы", "textEn":"3en", "url":"/images/3.jpg"},
-	{"textRu":"4 Да это так","textEn": "4en", "url":"/images/4.jpg"},
-	{"textRu":"5 Всё красиво!","textEn": "5en", "url":"/images/5.jpg"}
+    {"textRu":"Уважаю ребят, знающих своё дело.", "textEn":"I respect the guys who know their business.", "url":"images/r3.jpg"},
+	{"textRu":"Они сделали сайт моей мечты.","textEn": "They made the site of my dreams.", "url":"images/r4.jpg"},
+	{"textRu":"Серьёзно и качественно.","textEn": "Seriously and efficiently.", "url":"images/r5.jpg"},
+	{"textRu":"Я очень довольна результатом!", "textEn":"I am very pleased with the result!", "url":"images/r1.jpg"},
+	{"textRu":"Пожалуй лучшая студия в городе.", "textEn":"Perhaps the best studio in the city.", "url":"images/r2.jpg"}
 ],
+section3DownText: ['Здесь может быть ваше фото!', 'Your photo may be here!' ],
 sliderContentForShow: [
-    {"textRu":"1", "textEn":"1en", "url":"/images/soundRight.jpg"},
-	{"textRu":"2", "textEn":"2en", "url":"/images/soundLeft.jpg"},
-	{"textRu":"3", "textEn":"3en", "url":"/images/3.jpg"}
+    {"textRu":"", "textEn":"", "url":"images/r3.jpg"},
+	{"textRu":"Они сделали сайт моей мечты.", "textEn":"They made the site of my dreams.", "url":"images/r4.jpg"},
+	{"textRu":"", "textEn":"", "url":"images/r5.jpg"}
 ],
 
-sliderBgImg: "/images/soundLeft.jpg",
-sliderText: 'text1',
+sliderBgImg: "images/r4.jpg",
+sliderText: 'Они сделали сайт моей мечты.',
 reactText: false,
 isBlockedSlider: false,
 isShowedSection1Text: false,
 isShowedSection4Text: false,
 section5Texts: [
-    {id: 1, textRu: 'русский текст 1 ggggggggggggggghg  hg gh hgg', textEn: 'englighh text 1'},
-    {id: 2, textRu: 'русский текст 2', textEn: 'englighh text 2'},
-    {id: 3, textRu: 'русский текст 3', textEn: 'englighh text 3'},
-    {id: 4, textRu: 'русский текст 4', textEn: 'englighh text 4'}
+    {id: 1, textRu: 'Создание "страниц приземления" ', textEn: '"Landing page" development'},
+    {id: 2, textRu: 'Обработка фотографий', textEn: 'Photo processing'},
+    {id: 3, textRu: 'Создание дизайна сайтов', textEn: 'Creating the sites design'},
+    {id: 4, textRu: 'Видео монтаж', textEn: 'Video editing'},
+    {id: 5, textRu: 'Сайты визитки, фотогалереи', textEn: 'Business cards sites, photo galleries'},
+    {id: 6, textRu: 'Разработка Логотипов', textEn: 'Logo Design'},
+    
 ],
 isSection5TextsShowed: true,
 isStartedSection5Text: false,

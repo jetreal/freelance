@@ -12,7 +12,6 @@ import Section1 from './Section1/Section1';
 import Section5 from './Section5/Section5';
 
 const Main = (props) => {
-    console.log(props)
     switch (props.btnIndex) {
         case 1: {
             return (
@@ -64,6 +63,7 @@ const Main = (props) => {
                         sliderText={props.sliderText}
                         isBlockedSlider={props.isBlockedSlider}
                         isLang={props.isLang}
+                        section3DownText={props.section3DownText}
                     />
 
                 </div>

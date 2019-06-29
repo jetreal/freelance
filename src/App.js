@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.sass';
+import './index.css';
 import { YMaps } from 'react-yandex-maps';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import LeftSidebar from './components/leftSidebar/LeftSidebar';
@@ -13,7 +14,8 @@ import HeaderContainer from './components/header/HeaderContainer';
 function App() {
   return (
     <YMaps>
-      <div className="App" onMousewheel={() => {alert('g')}}>
+      <div className="App" onMouseWheel={() => {alert('g')}}>
+      
         <ReactCSSTransitionGroup transitionName="fade"
           transitionEnterTimeout={500}
           transitionLeaveTimeout={300}>

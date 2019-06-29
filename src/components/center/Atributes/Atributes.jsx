@@ -10,18 +10,20 @@ import Table from './TableSection/Table/Table';
 import TvRemote from './TableSection/TvRemote/TvRemote';
 import SofaImage from './Sofa/SofaImage/SofaImage';
 import MapComponent from './Sofa/Map/MapComponent';
+import TableShadow from './TableSection/Table/TableShadow/TableShadow';
 
 
 const Atributes = (props) => {
     console.log(props)
     return (
         <div className={styles.attributes}>
-
+            
             <TableSection>
                 <SoundLeft />
                 <Table />
                 <TvRemote changeTV={props.changeTV}
                         isShowMap={props.isShowMap} />
+                <TableShadow />
             </TableSection>
 
             <Sofa>

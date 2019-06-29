@@ -108,15 +108,11 @@ export const FourSectionDiv = styled.div`
     
     text-align: justify;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto 150px auto;
     color: white;
     justify-content: space-evenly;
     margin: 0 10px
-    @media (max-width: 1200px) { 
-        justify-content: space-between;
-        margin: 0
-     
-    }
+
     @media (max-width: 1080px) { 
         grid-template-columns: auto auto;
         justify-content: space-evenly;
@@ -131,29 +127,22 @@ export const FourSectionInnerDiv = styled.div`
     transform: ${props => props.isShowedSection4Text === true ? 'rotateY(0deg)' : 'rotateY(90deg)'};
     transition: transform .5s;
     text-align: center;
+    transition: all 1s;
+    text-shadow: 1px 1px 5px green;
     display: grid;
     align-content: center;
     padding: 0 20px;
-    width: 200px;
-    @media (max-width: 1200px) { 
-        width: 180px;
-    }
-    @media (max-width: 1080px) { 
-        width: 300px;
-    }
-    @media (max-width: 1000px) {
-        width: 250px;
-        padding: 0 2px;
-        padding: initial;
-        pargin: initial;
-    }
+    width: 250px;
+    // @media (max-width: 1200px) { 
+    //     width: 250px;
+    // }
 
 `
 export const ContactTextDiv = styled.div`
     position: absolute
     top: 15px
     left: 65px
-    z-index: -1
+    z-index: 0
     transition: font-size .3s
     @media (max-width: 800px) {
         font-size: .92em;
@@ -192,6 +181,7 @@ export const ReviewsItemDivText = styled.div`
     left: -20px
     top: 45px
     width: 250px
+    padding: 15px
     // transform: rotateX(50deg);
     height: 150px
     border-top: 1px solid gray
@@ -199,7 +189,7 @@ export const ReviewsItemDivText = styled.div`
     display: grid
     align-content: center
     justify-content: center
-    text-align: justify
+    text-align: center
     box-shadow: 2px 2px 2px black
     background-color: rgba(1, 1, 10, 0.5);
     clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)

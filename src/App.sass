@@ -1,9 +1,17 @@
 *
     box-sizing: border-box
+    ::-moz-selection 
+        color: lightblue
+    ::selection 
+        color: lightblue
 
-    
+
+
 body
-    background-color: gray
+    
+    display: grid
+    align-content: center
+    background-color: black
     box-sizing: border-box
     height: auto
     overflow-x: hidden
@@ -11,24 +19,45 @@ body
     margin: auto auto
     min-width: 768px
     max-width: 1366px
-// p
-//     margin: initial
-//     padding: initial
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
 
+
+@media screen and (max-width: 480px)
+    body
+        position: absolute
+        top: 40%
+    
+
+    
+.App
+    margin-top: 25px
+    height: auto
+    border: 2px solid black
+    display: grid
+    align-content: center
+    background-color: black
+    // transform: scaleY(.7)
+    // position: relative
+    // top: 20%
+    // overflow-y: auto
+@media screen and (max-width: 992px)
+    body
+        overflow-y: auto
+@media screen and (max-device-width: 768px)
+    body
+        overflow-y: auto
+        margin-top: 25px
+    .App
+        height: auto
 
 
 .mainContentAndSides
     display: grid
     grid-template-columns: 15% 70% 15%
-    
-.App
-    height: 100vh
-    border: 2px solid black
-    display: grid
-    align-content: center
-    background-color: black
-
-
 
 .fade-enter
     opacity: 0.01

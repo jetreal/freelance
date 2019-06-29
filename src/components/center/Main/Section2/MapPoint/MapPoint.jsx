@@ -7,7 +7,7 @@ export default (props) => {
             onClick={props.tvIndex % 2 !== 0 ? props.showMap : null}
             style={props.tvIndex % 2 === 0 ? { cursor: 'no-drop' } : {}}>
 
-            <img src={'/images/mapPoint.png'} />
+            <img src={'images/mapPoint.png'} />
         </div>
     )
 }
