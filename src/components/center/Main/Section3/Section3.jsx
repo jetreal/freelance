@@ -8,7 +8,6 @@ import DownText from './DownText/DownText';
 import Round from './Round/Round';
 
 const Section3 = (props) => {
-    console.log(props)
     return (
         <div>
             <ReviewsDiv>

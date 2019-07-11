@@ -14,7 +14,7 @@ import HeaderContainer from './components/header/HeaderContainer';
 function App() {
   return (
     <YMaps>
-      <div className="App" onMouseWheel={() => {alert('g')}}>
+      <div className="App" >
       
         <ReactCSSTransitionGroup transitionName="fade"
           transitionEnterTimeout={500}

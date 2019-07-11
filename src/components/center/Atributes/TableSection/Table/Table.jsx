@@ -4,7 +4,7 @@ import styles from './table.module.sass'
 const Table = (props) => {
     return (
         <div>
-            <img className={styles.miniTable} src={'images/table.png'} />
+            <img className={styles.miniTable} src={'images/table.webp'} alt='' />
         </div>
     )
 }

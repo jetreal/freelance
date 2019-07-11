@@ -20,7 +20,7 @@ const MapComponent = (props) => {
                     height='100%'>
                 <FullscreenControl />
                  
-                     <Placemark geometry={[53.265047, 34.330718]} />
+                     <Placemark geometry={[53.252958, 34.337904]} />
                 </Map>
             </div>
         </YMaps>

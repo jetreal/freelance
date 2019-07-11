@@ -4,12 +4,6 @@ import { Section5Div } from './Section5Styled';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class Section5 extends React.Component {
-    constructor(props) {
-        super(props)
-
-
-    }
-
 
     componentDidMount() {
         setTimeout(() => this.props.startShowSection5Text(), 700);
@@ -19,9 +13,8 @@ class Section5 extends React.Component {
     //     setTimeout(() => this.props.showSection5Text(), 20);
     // }
 
-
     render() {
-        console.log(this.props)
+
         return (
             <ReactCSSTransitionGroup
                 transitionName="fade"
@@ -30,7 +23,7 @@ class Section5 extends React.Component {
                 <Section5Div isSection5TextsShowed={this.props.isSection5TextsShowed}
                              isStartedSection5Text={this.props.isStartedSection5Text}>
                     <img className={styles.checkMark}
-                        src={'images/checkMark2.png'}
+                        src={'images/checkMark2.webp'} alt=''
                         onClick={this.props.showSection5Text} />
 
                     <p className={styles.section5Text}>

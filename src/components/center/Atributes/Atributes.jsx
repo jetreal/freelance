@@ -12,32 +12,40 @@ import SofaImage from './Sofa/SofaImage/SofaImage';
 import MapComponent from './Sofa/Map/MapComponent';
 import TableShadow from './TableSection/Table/TableShadow/TableShadow';
 
+class Atributes extends React.PureComponent {
 
-const Atributes = (props) => {
-    console.log(props)
-    return (
-        <div className={styles.attributes}>
-            
-            <TableSection>
-                <SoundLeft />
-                <Table />
-                <TvRemote changeTV={props.changeTV}
-                        isShowMap={props.isShowMap} />
-                <TableShadow />
-            </TableSection>
+    
 
-            <Sofa>
-                <WrappTv>
-                    {props.isShowMap === true && <MapComponent />}
-                    <Tv tvIndex={props.tvIndex} changeTV={props.changeTV} />
-                </WrappTv>
-                <SofaImage />
-            </Sofa>
-
-            <SoundRight />
-
-        </div>
-    )
+    render() {
+        return (
+            <div className={styles.attributes}>
+                
+                <TableSection>
+                    <SoundLeft />
+                    <Table />
+                    <TvRemote changeTV={this.props.changeTV}
+                            isShowMap={this.props.isShowMap} />
+                    <TableShadow />
+                </TableSection>
+    
+                <Sofa>
+                    <WrappTv>
+                        {this.props.isShowMap === true && <MapComponent />}
+                        
+                        <div className={styles.tv}>
+                            {this.props.tvOn === true && <Tv tvIndex={this.props.tvIndex}
+                                                        changeTV={this.props.changeTV} 
+                                                     />}
+                        </div>
+                    </WrappTv>
+                    <SofaImage />
+                </Sofa>
+    
+                <SoundRight />
+    
+            </div>
+        )
+    }
 }
 
 export default Atributes 

@@ -2,7 +2,6 @@ import React from 'react'
 import styles from './center.module.sass'
 import Main from './Main/Main';
 import Atributes from './Atributes/Atributes';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Colomn from './Colomn/Colomn';
 import ColumnShadow from './Colomn/ColumnShadow/ColumnShadow';
 import ColumnShadow2 from './Colomn/ColumnShadow2/ColumnShadow2';
@@ -14,7 +13,7 @@ const Center = (props) => {
     let x = props.buttons.activeButtonNum
     return (
         <div className={x !== 1 ? styles.center : styles.center2}
-            style={{ backgroundImage: `url(images/${x}.jpg)` }} >
+            style={{ backgroundImage: `url(images/${x}.webp)` }} >
             
          {/* <div className={styles.topMidlware}>
 
@@ -23,10 +22,10 @@ const Center = (props) => {
          {props.buttons.activeButtonNum === 6 ?  
          <div>
          <div className={styles.jsDiv}>
-            <img className={styles.js} src='images/js3.png'/>
+            <img className={styles.js} src='images/js3.webp' alt=''/>
          </div>
          <div className={styles.jetrealDiv}>
-            <img className={styles.jetrealLogo} src='images/jetrealLogo.png'/>
+            <img className={styles.jetrealLogo} src='images/jetrealLogo.webp' alt=""/>
          </div> 
          </div> : null }
          
@@ -37,7 +36,7 @@ const Center = (props) => {
          {/* <Colomn className={styles.columnRight}/> */}
 
          <Main btnIndex ={props.buttons.activeButtonNum}
-               tvIndex={props.buttons.tvIndex}
+               tvOn={props.buttons.tvOn}
                texts={props.buttons.texts} 
                isLang={props.buttons.isLang}
                pointsPosition={props.buttons.pointsPosition}
@@ -64,7 +63,7 @@ const Center = (props) => {
                showSection5Text={props.showSection5Text}
                changeSection5Text={props.changeSection5Text}
                showMap={props.showMap}
-               tvIndex={props.buttons.tvIndex}
+               offMap={props.offMap}
                textsForFirstSection={props.buttons.textsForFirstSection}
                section4Texts={props.buttons.section4Texts}
                section3DownText={props.buttons.section3DownText}
@@ -73,6 +72,7 @@ const Center = (props) => {
                
          <Atributes changeTV={props.changeTV}
                     tvIndex={props.buttons.tvIndex}
+                    tvOn={props.buttons.tvOn}
                     isShowMap={props.buttons.isShowMap}/>
 
         </div>

@@ -6,7 +6,7 @@ const TvRemote = (props) => {
         <div className={styles.wrappTvRemote}>
             <img onClick={props.isShowMap === false ? props.changeTV : null}
                 style={props.isShowMap === true ? {cursor: 'no-drop'} : {}}
-                className={styles.tvRemote} src={'images/tvRemote.png'} />
+                className={styles.tvRemote} src={'images/tvRemote.webp'} alt=''/>
         </div>
     )
 }

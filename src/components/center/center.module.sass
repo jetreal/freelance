@@ -35,7 +35,7 @@
     position: absolute
     top: -100px
     left: -70px
-    background-image: url('/images/columnLeft.png')
+    background-image: url('/images/columnLeft.webp')
     background-size: cover
     background-repeat: no-repeat
 
@@ -74,6 +74,8 @@
     position: absolute
     right: 170px
 
+  
+
 .jetrealLogo
     position: relative
     margin: 0 auto
@@ -82,16 +84,25 @@
     top: 170px
     right: 10px
     overflow: visible
-    transition: transform .5s, right .5s
+    transition: transform .5s, right .5s, top .5s, width .5s, height .5s
+
+
+
 @media screen and (max-width: 950px)
     .jetrealLogo
-        transform: scale(.8,.8)
-        right: 0
+        width: 145px
+        height: 145px
+        right: -10px
+        top: 180px
+
 @media screen and (max-width: 850px)
     .jetrealLogo
-        // transform: scale(.8,.8)
-        right: -17px
+        // transform: scale(1.2,1.2)
+        right: -27px
 @media screen and (max-width: 800px)
+
     .jetrealLogo
-        // transform: scale(.8,.8)
-        right: -25px
+        right: -22px
+        transform: scalex(.9)
+
+        right: -36px

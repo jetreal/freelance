@@ -4,15 +4,23 @@
         color: lightblue
     ::selection 
         color: lightblue
+    -webkit-tap-highlight-color: transparent
 
 
 html
-    width: 100vw
+    width: 100%
+    height: 100%
+    display: grid
+    align-content: center
+
 body
-    
+    border-radius: 15px
     display: grid
     align-content: center
     background-color: black
+    background-image: url(/images/skyBG.jpg)
+    background-repeat: no-repeat
+    background-size: cover
     box-sizing: border-box
     height: auto
     overflow-x: hidden
@@ -21,6 +29,7 @@ body
     width: 100%
     min-width: 768px
     max-width: 1366px
+    box-shadow: 10px 10px 10px 2px rgba(0,0,0,0.5), -10px 10px 10px 2px rgba(0,0,0,0.5), 10px -10px 10px 2px rgba(0,0,0,0.5), -10px -10px 10px 2px rgba(0,0,0,0.5)
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif
@@ -36,7 +45,8 @@ body
 
     
 .App
-    margin-top: 25px
+    // margin-top: 25px
+    
     height: auto
     border: 2px solid black
     display: grid
@@ -46,7 +56,7 @@ body
     // position: relative
     // top: 20%
     // overflow-y: auto
-@media screen and (max-width: 992px)
+@media screen and (max-device-width: 992px)
     body
         overflow-y: auto
 @media screen and (max-device-width: 768px)
@@ -55,7 +65,10 @@ body
         margin-top: 25px
     .App
         height: auto
-
+@media screen and (max-width: 768px)
+    body
+        background-image: none
+        background-color: black
 
 .mainContentAndSides
     display: grid

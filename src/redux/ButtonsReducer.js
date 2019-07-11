@@ -14,6 +14,7 @@ import { RIGHT_BUTTON_CLICK,
         SHOW_SECTION5_TEXT,
         CHANGE_SECTION5_TEXT,
         SHOW_MAP,
+        OFF_MAP,
         START_SHOW_SECTION5_TEXT
     } from "./Constants";
 
@@ -29,6 +30,7 @@ let initialState = {
 ],
 activeButtonNum: 1,
 tvIndex: 1,
+tvOn: false,
 texts: [
     { id: 1, textRu: 'О нас', textEn: 'About us'},
     { id: 2, textRu: 'Как нас найти', textEn: 'How to find me'},
@@ -41,22 +43,9 @@ isLang: false,
 langBtnNames: [ 'ru', 'en' ],
 phoneNum: '+ 7 952 964 57 21',
 headerText: [ 'Создание Cайтов', 'The Sites Creating'],
-textsForFirstSection: ['We are a web studio that creates fast and beautiful sites.\
- You will be satisfied with our work, because you get exactly what you want.\
-  The design will be developed taking into account the tasks of the site,\
-   as well as taking into account the attention of the target audience.\
-    We apply the most modern technologies that increase the performance of the site.\
-     For a higher quality service, we are in constant dialogue with the client.\
-      You will be heard, and your goals will be fulfilled, because we work for you.',
-
-  'Мы веб студия, которая создаёт, быстрые и красивые сайты. \
-  Вы останетесь довольны нашей работой,\
-   потому что получите именно то что хотите. \
-  Дизайн будет разработан с учётом задач сайта, а также с учётом внимания целевой аудитории. \
-  Мы применяем самые современные технологии, увеличивающие производительность сайта.\
-  Для более высокого качества сервиса, мы находимся в постоянном диалоге с клиентом.\
-  Вы будете обязательно услышаны, а ваши цели обязательно выполнены, потому что мы работаем именно для вас. \
-  '],
+textsForFirstSection: ['We are a web studio that creates fast and beautiful sites. You will be satisfied with our work, because you get exactly what you want. The design will be developed taking into account the tasks of the site, as well as taking into account the attention of the target audience. We apply the most modern technologies that increase the performance of the site. For a higher quality service, we are in constant dialogue with the client. You will be heard, and your goals will be fulfilled, because we work for you.',
+                      'Мы веб студия, которая создаёт, быстрые и красивые сайты. Вы останетесь довольны нашей работой, потому что получите именно то что хотите. Дизайн будет разработан с учётом задач сайта, а также с учётом внимания целевой аудитории. Мы применяем самые современные технологии, увеличивающие производительность сайта. Для более высокого качества сервиса, мы находимся в постоянном диалоге с клиентом. Вы будете обязательно услышаны, а ваши цели обязательно выполнены, потому что мы работаем именно для вас.'
+                      ],
 section4Texts: [
     {leftTexts: [' Cosmically cool images',
                  'Dynamic animation', 
@@ -85,20 +74,20 @@ pointsPosition: 0, // 0 - 2
 pointsPositionWithDelay: 0, // 0 - 2
 slidePosition: 'center',
 sliderContent: [
-    {"textRu":"Уважаю ребят, знающих своё дело.", "textEn":"I respect the guys who know their business.", "url":"images/r3.jpg"},
-	{"textRu":"Они сделали сайт моей мечты.","textEn": "They made the site of my dreams.", "url":"images/r4.jpg"},
-	{"textRu":"Серьёзно и качественно.","textEn": "Seriously and efficiently.", "url":"images/r5.jpg"},
-	{"textRu":"Я очень довольна результатом!", "textEn":"I am very pleased with the result!", "url":"images/r1.jpg"},
-	{"textRu":"Пожалуй лучшая студия в городе.", "textEn":"Perhaps the best studio in the city.", "url":"images/r2.jpg"}
+    {"textRu":"Уважаю ребят, знающих своё дело.", "textEn":"I respect the guys who know their business.", "url":"images/r3.webp"},
+	{"textRu":"Они сделали сайт моей мечты.","textEn": "They made the site of my dreams.", "url":"images/r4.webp"},
+	{"textRu":"Серьёзно и качественно.","textEn": "Seriously and efficiently.", "url":"images/r5.webp"},
+	{"textRu":"Я очень довольна результатом!", "textEn":"I am very pleased with the result!", "url":"images/r1.webp"},
+	{"textRu":"Пожалуй лучшая студия в городе.", "textEn":"Perhaps the best studio in the city.", "url":"images/r2.webp"}
 ],
 section3DownText: ['Здесь может быть ваше фото!', 'Your photo may be here!' ],
 sliderContentForShow: [
-    {"textRu":"", "textEn":"", "url":"images/r3.jpg"},
-	{"textRu":"Они сделали сайт моей мечты.", "textEn":"They made the site of my dreams.", "url":"images/r4.jpg"},
-	{"textRu":"", "textEn":"", "url":"images/r5.jpg"}
+    {"textRu":"", "textEn":"", "url":"images/r3.webp"},
+	{"textRu":"Они сделали сайт моей мечты.", "textEn":"They made the site of my dreams.", "url":"images/r4.webp"},
+	{"textRu":"", "textEn":"", "url":"images/r5.webp"}
 ],
 
-sliderBgImg: "images/r4.jpg",
+sliderBgImg: "images/r4.webp",
 sliderText: 'Они сделали сайт моей мечты.',
 reactText: false,
 isBlockedSlider: false,
@@ -108,7 +97,7 @@ section5Texts: [
     {id: 1, textRu: 'Создание "страниц приземления" ', textEn: '"Landing page" development'},
     {id: 2, textRu: 'Обработка фотографий', textEn: 'Photo processing'},
     {id: 3, textRu: 'Создание дизайна сайтов', textEn: 'Creating the sites design'},
-    {id: 4, textRu: 'Видео монтаж', textEn: 'Video editing'},
+    {id: 4, textRu: 'Видеомонтаж', textEn: 'Video editing'},
     {id: 5, textRu: 'Сайты визитки, фотогалереи', textEn: 'Business cards sites, photo galleries'},
     {id: 6, textRu: 'Разработка Логотипов', textEn: 'Logo Design'},
     
@@ -168,8 +157,12 @@ const ButtonsReducer = (state = initialState, action) => {
         }
         case (action.type === CHANGE_TV):{
             let StateCopy = {...state}
-            StateCopy.tvIndex++
-            if (StateCopy.tvIndex > 4) {
+            
+            StateCopy.tvOn = !StateCopy.tvOn
+            if (StateCopy.tvOn === false) {
+                StateCopy.tvIndex++
+            }
+            if (StateCopy.tvIndex > 2) {
                 StateCopy.tvIndex = 1
             }
             return StateCopy
@@ -265,7 +258,11 @@ const ButtonsReducer = (state = initialState, action) => {
         case (action.type === SHOW_MAP) : {
             let copyState = {...state};
             copyState.isShowMap = !copyState.isShowMap
-            
+            return copyState
+        }
+        case (action.type === OFF_MAP) : {
+            let copyState = {...state};
+            copyState.isShowMap = false;
             return copyState
         }
         default:

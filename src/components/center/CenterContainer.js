@@ -11,14 +11,15 @@ import { changePointsPlace,
          showSection5Text,
          changeSection5Text,
          showMap,
+         offMap,
          startShowSection5Text
         } from '../../redux/Actions';
 
 
 let mapStateToProps = (state) => {
+    console.log(state)
     return {
         buttons: state.ButtonsReducer
-        // texts: state.texts
     } 
 }
 
@@ -42,7 +43,8 @@ const CenterContainer = connect(mapStateToProps,
      showSection5Text,
      changeSection5Text,
      startShowSection5Text,
-     showMap
+     showMap,
+     offMap
 })(Center)
 
 export default CenterContainer

@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './tv.module.sass'
 
-
 class Tv extends React.Component {
     constructor(props) {
         super(props);
@@ -23,14 +22,13 @@ class Tv extends React.Component {
 
     render() {
         return (
-            <div className={styles.tv} >
+            <>
                 <video ref={this.myRef} className={styles.tvImg}
                     src={`video/${this.props.tvIndex}.mp4`}
                     autoPlay
                 ></video>
-            </div>
+            </>
         )
-
     }
 }
 

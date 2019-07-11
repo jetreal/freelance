@@ -4,7 +4,7 @@ import styles from './myPhoto.module.sass'
 const MyPhoto = (props) => {
     return (
         <div className={styles.myPhoto}>
-            <img src={'images/serjMini.jpg'} />
+            <img src={'images/jewel.jpg'} alt=''/>
         </div>
     )
 }
