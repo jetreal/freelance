@@ -46,8 +46,11 @@ headerText: [ 'Создание Cайтов', 'The Sites Creating'],
 textsForFirstSection: ['We are a web studio that creates fast and beautiful sites. You will be satisfied with our work, because you get exactly what you want. The design will be developed taking into account the tasks of the site, as well as taking into account the attention of the target audience. We apply the most modern technologies that increase the performance of the site. For a higher quality service, we are in constant dialogue with the client. You will be heard, and your goals will be fulfilled, because we work for you.',
                       'Мы веб студия, которая создаёт, быстрые и красивые сайты. Вы останетесь довольны нашей работой, потому что получите именно то что хотите. Дизайн будет разработан с учётом задач сайта, а также с учётом внимания целевой аудитории. Мы применяем самые современные технологии, увеличивающие производительность сайта. Для более высокого качества сервиса, мы находимся в постоянном диалоге с клиентом. Вы будете обязательно услышаны, а ваши цели обязательно выполнены, потому что мы работаем именно для вас.'
                       ],
+textsForTvset: ['',
+                ''
+],
 section4Texts: [
-    {leftTexts: [' Cosmically cool images',
+    {leftTexts: ['Сool images',
                  'Dynamic animation', 
                  'The most worthy overall picture',
                  'Minimalism - nothing superfluous',
@@ -59,7 +62,7 @@ section4Texts: [
                  'Discounts for regular customers']},
 
 
-    {leftTexts: ['Космически крутые образы',
+    {leftTexts: ['Крутые образы',
                  'Динамичная анимация',
                  'Достойнейшая общая картина',
                  'Минимализм - ничего лишнего',
@@ -100,6 +103,7 @@ section5Texts: [
     {id: 4, textRu: 'Видеомонтаж', textEn: 'Video editing'},
     {id: 5, textRu: 'Сайты визитки, фотогалереи', textEn: 'Business cards sites, photo galleries'},
     {id: 6, textRu: 'Разработка Логотипов', textEn: 'Logo Design'},
+    {id: 7, textRu: 'SEO, продвижение сайтов', textEn: 'SEO, website promotion'}
     
 ],
 isSection5TextsShowed: true,
@@ -162,7 +166,7 @@ const ButtonsReducer = (state = initialState, action) => {
             if (StateCopy.tvOn === false) {
                 StateCopy.tvIndex++
             }
-            if (StateCopy.tvIndex > 2) {
+            if (StateCopy.tvIndex > 3) {
                 StateCopy.tvIndex = 1
             }
             return StateCopy

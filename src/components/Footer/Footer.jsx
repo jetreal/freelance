@@ -5,8 +5,8 @@ import styles from './footer.module.sass'
 const Footer = (props) => {
     return (
         <div className={styles.footer}>
+            
 
-                       
         </div>
     )
 }

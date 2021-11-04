@@ -5,9 +5,9 @@ import styles from './headerText.module.sass'
 const HeaderText = (props) => {
     return (
         <div className={styles.headerText}>
-            <p>
+            <h1>
                 {props.isLang === false ? props.headerText[0] : props.headerText[1]}
-            </p>
+            </h1> 
         </div>
     )
 }

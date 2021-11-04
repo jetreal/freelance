@@ -25,7 +25,7 @@ class Tv extends React.Component {
             <>
                 <video ref={this.myRef} className={styles.tvImg}
                     src={`video/${this.props.tvIndex}.mp4`}
-                    autoPlay
+                    autoPlay muted
                 ></video>
             </>
         )

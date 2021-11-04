@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './slider.module.sass'
-import { WrappSliderDiv, ImgDiv, BgSliderDiv} from './SliderStyled';
+import { WrappSliderDiv, ImgDiv, BgSliderDiv } from './SliderStyled';
+import Media from "react-media";
 
 
 
@@ -17,7 +18,10 @@ const Slider = (props) => {
             <BgSliderDiv>
                 <img src={props.sliderBgImg} alt='slider' />
             </BgSliderDiv>
-            {Images}
+            <Media
+                query="(min-width: 768px)"
+                render={() => Images}
+            />
         </WrappSliderDiv>
 
     )

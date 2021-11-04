@@ -11,48 +11,45 @@ import Section1 from './Section1/Section1';
 import Section5 from './Section5/Section5';
 
 class Main extends React.PureComponent {
-
-
-
     render() {
         switch (this.props.btnIndex) {
             case 1: {
                 return (
                     <div className={styles.main}>
-                        
+
                         <HeaderText isLang={this.props.isLang}
                             texts={this.props.texts}
                             btnIndex={this.props.btnIndex} />
-                            
+
                         <Section1 showSection1Text={this.props.showSection1Text}
-                                  isShowedSection1Text={this.props.isShowedSection1Text}
-                                  textsForFirstSection={this.props.textsForFirstSection}
-                                  isLang={this.props.isLang}/>
-    
+                            isShowedSection1Text={this.props.isShowedSection1Text}
+                            textsForFirstSection={this.props.textsForFirstSection}
+                            isLang={this.props.isLang} />
+
                     </div>
                 )
             }
             case 2: {
                 return (
                     <div className={styles.main}>
-                    
+
                         <HeaderText isLang={this.props.isLang}
                             texts={this.props.texts}
                             btnIndex={this.props.btnIndex} />
-    
+
                         <Section2 pointsPosition={this.props.pointsPosition}
                             pointsPositionWithDelay={this.props.pointsPositionWithDelay}
                             changePointsPlace={this.props.changePointsPlace}
                             showMap={this.props.showMap}
                             offMap={this.props.offMap}
                             tvOn={this.props.tvOn} />
-    
+
                     </div>
                 )
             }
             case 3: {
                 return (
-    
+
                     <div className={styles.main}>
                         <HeaderText isLang={this.props.isLang}
                             texts={this.props.texts}
@@ -67,21 +64,20 @@ class Main extends React.PureComponent {
                             isLang={this.props.isLang}
                             section3DownText={this.props.section3DownText}
                         />
-    
+
                     </div>
                 )
             }
             case 4: {
                 return (
-    
                     <div className={styles.main}>
                         <HeaderText isLang={this.props.isLang}
                             texts={this.props.texts}
                             btnIndex={this.props.btnIndex} />
                         <Section4 isShowedSection4Text={this.props.isShowedSection4Text}
-                                showSection4Text={this.props.showSection4Text}
-                                section4Texts={this.props.section4Texts}
-                                isLang={this.props.isLang} />
+                            showSection4Text={this.props.showSection4Text}
+                            section4Texts={this.props.section4Texts}
+                            isLang={this.props.isLang} />
                     </div>
                 )
             }
@@ -92,20 +88,19 @@ class Main extends React.PureComponent {
                             texts={this.props.texts}
                             btnIndex={this.props.btnIndex} />
                         <Section5 section5Texts={this.props.section5Texts}
-                                  isSection5TextsShowed={this.props.isSection5TextsShowed}
-                                  section5TextsIndex={this.props.section5TextsIndex}
-                                  showSection5Text={this.props.showSection5Text}
-                                  changeSection5Text={this.props.changeSection5Text}
-                                  isLang={this.props.isLang}
-                                  isStartedSection5Text={this.props.isStartedSection5Text}
-                                  startShowSection5Text={this.props.startShowSection5Text}/>
-                        
+                            isSection5TextsShowed={this.props.isSection5TextsShowed}
+                            section5TextsIndex={this.props.section5TextsIndex}
+                            showSection5Text={this.props.showSection5Text}
+                            changeSection5Text={this.props.changeSection5Text}
+                            isLang={this.props.isLang}
+                            isStartedSection5Text={this.props.isStartedSection5Text}
+                            startShowSection5Text={this.props.startShowSection5Text} />
                     </div>
                 )
             }
             case 6: {
                 return (
-    
+
                     <div className={styles.main}>
                         <HeaderText isLang={this.props.isLang}
                             texts={this.props.texts}
@@ -114,15 +109,15 @@ class Main extends React.PureComponent {
                     </div>
                 )
             }
-            default: {}
+            default: { }
         }
         return (
             <div className={styles.main}>
-                
+
                 <HeaderText isLang={this.props.isLang}
                     texts={this.props.texts}
                     btnIndex={this.props.btnIndex} />
-    
+
             </div>
         )
     }

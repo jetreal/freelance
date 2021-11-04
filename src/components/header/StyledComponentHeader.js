@@ -17,7 +17,7 @@ const keyFrames = keyframes`
 
 export const PhoneNumDiv = styled.div`
     color: red;
-    animation: ${keyFrames} 30s linear infinite
+    animation: ${keyFrames} 7s linear infinite
     font-size: 1.1em
     position: relative;
     left: -30px;

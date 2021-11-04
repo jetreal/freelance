@@ -9,13 +9,15 @@ import RightSidebarContainer from './components/rightSidebar/RightSidebarContain
 import CenterContainer from './components/center/CenterContainer';
 import HeaderContainer from './components/header/HeaderContainer';
 
-
-
 function App() {
   return (
     <YMaps>
-      <div className="App" >
       
+        <div className="video">
+          <video className="video__media" src='video/7.mp4' muted autoPlay loop></video>
+        </div>
+      <div className="App" >
+        
         <ReactCSSTransitionGroup transitionName="fade"
           transitionEnterTimeout={500}
           transitionLeaveTimeout={300}>

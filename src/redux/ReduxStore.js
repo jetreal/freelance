@@ -1,4 +1,5 @@
 import { combineReducers, createStore } from "redux";
+import { composeWithDevTools } from 'redux-devtools-extension';
 import ButtonsReducer  from './ButtonsReducer'
 
 
@@ -14,7 +15,7 @@ let reducers = combineReducers({
 
 })
 
-let store = createStore(reducers, applyMiddleware(sagaMiddleware));
+let store = createStore(reducers, composeWithDevTools(applyMiddleware(sagaMiddleware)));
 
 sagaMiddleware.run(rootSaga)
 

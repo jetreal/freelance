@@ -25,20 +25,26 @@ export function* watchChangeSection5Text() {
   yield takeEvery('SHOW_SECTION5_TEXT', showSection5Text)
 }
 
+export function* OnTv() {
+  yield delay(3000)
+  yield put({type: 'CHANGE_TV'})
+}
+
 export function* helloSaga() {
     yield delay(1050)
     yield put({type: 'CHANGE_POINTS_PLACE_WITH_DELAY'})
+    // yield put({type: 'CHANGE_TV'})
   }
   export function* unblockSlider() {
     yield delay(250)
     yield put({ type: 'UNBLOCK_SLIDER' })
   }
 export function* initialSlideLeftSaga() {
-  yield delay(1000)
+  yield delay(400)
   yield put({ type: 'INITIAL_SLIDE_LEFT' })
 }
 export function* initialSlideRightSaga() {
-  yield delay(1000)
+  yield delay(400)
   yield put({ type: 'INITIAL_SLIDE_RIGHT' })
 }
 export function* showReactText() {
@@ -49,6 +55,9 @@ export function* showSection5Text() {
   yield delay(1500)
   yield put({ type: 'CHANGE_SECTION5_TEXT' })
 }
+
+
+
 export default function* rootSaga() {
     yield all([
       helloSaga,
@@ -57,6 +66,7 @@ export default function* rootSaga() {
       initialSlideRightSaga,
       showReactText,
       watchChangeSection5Text(),
-      showSection5Text
+      showSection5Text,
+      OnTv()
     ])
   }

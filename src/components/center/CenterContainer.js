@@ -17,7 +17,6 @@ import { changePointsPlace,
 
 
 let mapStateToProps = (state) => {
-    console.log(state)
     return {
         buttons: state.ButtonsReducer
     } 

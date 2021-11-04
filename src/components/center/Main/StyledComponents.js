@@ -197,7 +197,7 @@ export const ReviewsItemDivText = styled.div`
 
 export const ReviewsItemP = styled.p`
     transform: ${props => props.slidePosition !== 'center' ? 'translateY(200px)' : 'translateY(0px)'};
-    transition: ${props => props.slidePosition !== 'center' ? 'transform .5s cubic-bezier(.27,-0.11,.84,.4)' : 'transform .2s cubic-bezier(.15,.76,.05,1.21)'};
+    transition: ${props => props.slidePosition !== 'center' ? 'transform .25s cubic-bezier(.27,-0.11,.84,.4)' : 'transform .3s cubic-bezier(.15,.76,.05,1.21)'};
     // opacity: ${props => props.slidePosition === 'center' ? '1' : '0'};
     position: relative
 
